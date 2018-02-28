@@ -1,5 +1,6 @@
 ﻿  main.cpp
-c:\users\asus\desktop\regex\main.cpp(113): warning C4018: “<”: 有符号/无符号不匹配
-c:\users\asus\desktop\regex\main.cpp(146): warning C4715: “calc”: 不是所有的控件路径都返回值
-  Regex.vcxproj -> C:\Users\asus\Desktop\Regex\Debug\Regex.exe
-  Regex.vcxproj -> C:\Users\asus\Desktop\Regex\Debug\Regex.pdb (Full PDB)
+c:\users\asus\documents\github\regex\regex\main.cpp(120): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\asus\documents\github\regex\regex\main.cpp(143): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\asus\documents\github\regex\regex\main.cpp(180): warning C4715: “calc”: 不是所有的控件路径都返回值
+  Regex.vcxproj -> C:\Users\asus\Documents\GitHub\Regex\Regex\Debug\Regex.exe
+  Regex.vcxproj -> C:\Users\asus\Documents\GitHub\Regex\Regex\Debug\Regex.pdb (Full PDB)

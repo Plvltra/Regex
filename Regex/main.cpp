@@ -88,14 +88,20 @@ struct Node
 	Node(int num) : num(num), lchild(nullptr), rchild(nullptr){}
 };
 
-bool isOperator(char c);
+bool isTermOp(char c);
+bool isExprOp(char c);
 Node* parseNum(const string& pattern, int& index);
 Node* parseTerm(const string& pattern, int& index);
 Node* parseExpr(const string& pattern, int& index);
 
-bool isOperator(char c)
+inline bool isTermOp(char c)
 {
-	return c == '+' || c == '*';
+	return c == '*' || c == '/';
+}
+
+inline bool isExprOp(char c)
+{
+	return c == '+' || c == '-';
 }
 
 Node* parseNum(const string& pattern, int& index)
@@ -110,30 +116,48 @@ Node* parseNum(const string& pattern, int& index)
 
 Node* parseTerm(const string& pattern, int& index)
 {
-
-}
-
-Node* parseExpr(const string& pattern, int& index)
-{
 	Node* num = parseNum(pattern, index);
-	while (index < pattern.size() && isOperator(pattern[index]))
+	while (index < pattern.size() && isTermOp(pattern[index]))
 	{
-		if (pattern[index] == '+')
+		if (pattern[index] == '*')
 		{
 			index++;
-			Node* expr = parseExpr(pattern, index);
-			Node* root = new Node('+', num, expr);
+			Node* other_num = parseNum(pattern, index);
+			Node* root = new Node('*', num, other_num);
 			return root;
 		}
-		else if (pattern[index] == '*')
+		else if (pattern[index] == '/')
 		{
 			index++;
-			Node* expr = parseExpr(pattern, index);
-			Node* root = new Node('*', num, expr);
+			Node* other_num = parseTerm(pattern, index);
+			Node* root = new Node('/', num, other_num);
 			return root;
 		}
 	}
 	return num;
+}
+
+Node* parseExpr(const string& pattern, int& index)
+{
+	Node* term = parseTerm(pattern, index);
+	while (index < pattern.size() && isExprOp(pattern[index]))
+	{
+		if (pattern[index] == '+')
+		{
+			index++;
+			Node* other_term = parseTerm(pattern, index);
+			Node* root = new Node('+', term, other_term);
+			return root;
+		}
+		else if (pattern[index] == '-')
+		{
+			index++;
+			Node* other_term = parseTerm(pattern, index);
+			Node* root = new Node('-', term, other_term);
+			return root;
+		}
+	}
+	return term;
 }
 
 int calc(Node* root)
@@ -146,15 +170,19 @@ int calc(Node* root)
 	{
 		if (root->symbol == '+')
 			return calc(root->lchild) + calc(root->rchild);
+		else if (root->symbol == '-')
+			return calc(root->lchild) - calc(root->rchild);
 		else if(root->symbol == '*')
 			return calc(root->lchild) * calc(root->rchild);
+		else if (root->symbol == '/')
+			return calc(root->lchild) / calc(root->rchild);
 	}
 }
 
 int main()
 {
 	int index = 0;
-	Node* ans = parseExpr("123*5+32", index);
+	Node* ans = parseExpr("123*5+2/0", index);
 	cout << calc(ans) << endl;
 	//string src = "asduhb@qq.com";
 	//string pattern = "([a-z,A-Z,0-9]+)@([a-z,A-Z,0-9]+).([a-z,A-Z,0-9]+)";
