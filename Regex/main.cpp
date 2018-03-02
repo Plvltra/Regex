@@ -2,6 +2,7 @@
 #include <vector>
 #include <stack>
 #include <cstdlib>
+#include <string>
 using namespace std;
 
 const char epsilon = '\0';
@@ -76,114 +77,11 @@ Graph bingLink(vector<Graph> graphes)
 //	end->isEnd = true;
 //}
 
-struct Node
-{
-	char symbol;
-	int num;
-	Node* lchild;
-	Node* rchild;
-	Node() = default;
-	Node(char symbol, Node* lchild, Node* rchild) 
-		: symbol(symbol), lchild(lchild), rchild(rchild){}
-	Node(int num) : num(num), lchild(nullptr), rchild(nullptr){}
-};
 
-bool isTermOp(char c);
-bool isExprOp(char c);
-Node* parseNum(const string& pattern, int& index);
-Node* parseTerm(const string& pattern, int& index);
-Node* parseExpr(const string& pattern, int& index);
-
-inline bool isTermOp(char c)
-{
-	return c == '*' || c == '/';
-}
-
-inline bool isExprOp(char c)
-{
-	return c == '+' || c == '-';
-}
-
-Node* parseNum(const string& pattern, int& index)
-{
-	string temp;
-	while (pattern[index] >= '0' && pattern[index] <= '9')
-		temp += pattern[index++];
-	// string to num
-	int num = atoi(temp.c_str());
-	return new Node(num);
-}
-
-Node* parseTerm(const string& pattern, int& index)
-{
-	Node* num = parseNum(pattern, index);
-	while (index < pattern.size() && isTermOp(pattern[index]))
-	{
-		if (pattern[index] == '*')
-		{
-			index++;
-			Node* other_num = parseNum(pattern, index);
-			Node* root = new Node('*', num, other_num);
-			return root;
-		}
-		else if (pattern[index] == '/')
-		{
-			index++;
-			Node* other_num = parseTerm(pattern, index);
-			Node* root = new Node('/', num, other_num);
-			return root;
-		}
-	}
-	return num;
-}
-
-Node* parseExpr(const string& pattern, int& index)
-{
-	Node* term = parseTerm(pattern, index);
-	while (index < pattern.size() && isExprOp(pattern[index]))
-	{
-		if (pattern[index] == '+')
-		{
-			index++;
-			Node* other_term = parseTerm(pattern, index);
-			Node* root = new Node('+', term, other_term);
-			return root;
-		}
-		else if (pattern[index] == '-')
-		{
-			index++;
-			Node* other_term = parseTerm(pattern, index);
-			Node* root = new Node('-', term, other_term);
-			return root;
-		}
-	}
-	return term;
-}
-
-int calc(Node* root)
-{
-	if (!root->lchild && !root->lchild)
-	{
-		return root->num;
-	}
-	else
-	{
-		if (root->symbol == '+')
-			return calc(root->lchild) + calc(root->rchild);
-		else if (root->symbol == '-')
-			return calc(root->lchild) - calc(root->rchild);
-		else if(root->symbol == '*')
-			return calc(root->lchild) * calc(root->rchild);
-		else if (root->symbol == '/')
-			return calc(root->lchild) / calc(root->rchild);
-	}
-}
 
 int main()
 {
-	int index = 0;
-	Node* ans = parseExpr("123*5+2/0", index);
-	cout << calc(ans) << endl;
+	
 	//string src = "asduhb@qq.com";
 	//string pattern = "([a-z,A-Z,0-9]+)@([a-z,A-Z,0-9]+).([a-z,A-Z,0-9]+)";
 	//regex rgx(pattern);

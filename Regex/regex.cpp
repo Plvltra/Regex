@@ -1,11 +1,9 @@
-#include <string>
-#include <iostream>
-#include <stack>
+#include "Regex.h"
 
-#include "regex.h"
 using namespace std;
 
-Regex::Regex(const string &pattern)
+Regex::Regex(string pattern)
+	: _pattern(pattern), _index(0)
 {
-	this->pattern = pattern;
+	buildTree();
 }
