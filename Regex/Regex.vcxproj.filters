@@ -21,14 +21,17 @@
     <ClCompile Include="Arithmetic.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Regex.cpp">
+    <ClCompile Include="Node.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Node.cpp">
+    <ClCompile Include="Regex.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Arithmetic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="Regex.h">
       <Filter>头文件</Filter>
     </ClInclude>

@@ -3,6 +3,10 @@
 #include <stack>
 #include <cstdlib>
 #include <string>
+#include <exception>
+
+#include "Arithmetic.h"
+#include "Regex.h"
 using namespace std;
 
 const char epsilon = '\0';
@@ -78,12 +82,22 @@ Graph bingLink(vector<Graph> graphes)
 //}
 
 
-
 int main()
 {
-	
+	//using Arithmetic::test;
+	//test();
+
+	Regex regex("a(bc*|de*)");
+	regex.printTree();
+
+	/*Node* lchild = new Node('a');
+	Node* rchild = new Node('b');
+	Node* root = new Node('&', lchild, rchild);
+	root->rowPrint();*/
+
 	//string src = "asduhb@qq.com";
 	//string pattern = "([a-z,A-Z,0-9]+)@([a-z,A-Z,0-9]+).([a-z,A-Z,0-9]+)";
+	////string pattern = "(";
 	//regex rgx(pattern);
 	//smatch results;
 	//regex_search(src, results, rgx);

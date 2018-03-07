@@ -1,6 +1,9 @@
 #pragma once
 #include <string>
 
+#include "Node.h"
+
+// a*   a|b   ab
 class Regex
 {
 public:
@@ -8,11 +11,19 @@ public:
 	virtual ~Regex();
 
 public:
-	parse(const std::string& src);
+	void printTree();
 
 private:
-	std::string _pattern;
-	int _index;
+	std::string pattern;
+	int index;
+	Node* root;
+
 private:
-	buildTree();
+	Node* parse();
+	Node* parseExpr();
+	Node* parseTerm();
+	Node* parseCharSet();
+
+	bool inExprSet(char);
+	bool inTermSet(char);
 };

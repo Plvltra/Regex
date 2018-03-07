@@ -152,6 +152,7 @@
     <ClCompile Include="Regex.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Arithmetic.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Regex.h" />
   </ItemGroup>
