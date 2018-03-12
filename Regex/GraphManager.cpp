@@ -59,7 +59,7 @@ void GraphManager::epsToNFA(Graph* graph)
 		Status* currStat = que.front();
 		que.pop();
 		if (currStat)
-			LinkManager::deleteEps(currStat);
+			//LinkManager::deleteEps(currStat);
 		// 添加后继节点
 		if (currStat != end)
 		{

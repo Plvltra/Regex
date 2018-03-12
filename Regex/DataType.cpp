@@ -46,6 +46,24 @@ bool Status::inStats(Stats stats)
 	return false;
 }
 
+bool Status::next(Status* stat)
+{
+	if (stat)
+		return stat->previous(this);
+	else
+		return false;
+}
+
+bool Status::previous(Status* stat)
+{
+	if (stat)
+	{
+		Stats nexts = this->nextStats();
+		return stat->inStats(nexts);
+	}
+	return false;
+}
+
 // Graph类
 Graph::Graph(Status* startStat, Status* endStat)
 	: startStat(startStat), endStat(endStat)
@@ -53,13 +71,28 @@ Graph::Graph(Status* startStat, Status* endStat)
 	if (!startStat || !endStat)
 		throw std::exception("构建图存在空指针");
 	endStat->setEnd(true);
-	markValid();
 }
 
 void Graph::toNFA()
 {
+	markValid();
+	eraseInvalid();
+
 	auto deleteEps = [](Status* stat) {
-		if(stat)
+		StatQue sq;
+		for (auto next : stat->nextStats())
+			sq.push(next);
+		while (!sq.empty())
+		{
+			Status* front = sq.front();
+			sq.pop();
+			if (LinkManager::getLinkCont(stat, front) == epsilon)
+			{
+				for (auto temp : front->nextStats())
+					sq.push(temp);
+				LinkManager::skipStat(stat, front);
+			}
+		}
 	};
 	bfs(deleteEps);
 }
@@ -73,7 +106,6 @@ void Graph::bfs(StatDealer dealer)
 	{
 		Status* front = sq.front();
 		sq.pop();
-		dealer(front);
 		// Add next stats
 		Stats nextStats = front->nextStats();
 		for (auto stat : nextStats)
@@ -84,8 +116,9 @@ void Graph::bfs(StatDealer dealer)
 				stat->checked = true;
 			}
 		}
+		dealer(front); // 最后处理节点，防止处理导致的节点被删除
 	}
-	resetChecked(); // 复原
+	resetChecked(); // 复原检查状态
 }
 
 void Graph::resetChecked()
@@ -128,4 +161,13 @@ void Graph::markValid()
 			stat->valid = false;
 	};
 	bfs(setValid);
+}
+
+void Graph::eraseInvalid()
+{
+	auto erase = [](Status* stat) {
+		if (!stat->valid)
+			LinkManager::eraseStat(stat);
+	};
+	bfs(erase);
 }

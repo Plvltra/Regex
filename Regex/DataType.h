@@ -1,6 +1,7 @@
 #pragma once
 
 #include "EpsilonNFA.h"
+#include "LinkManager.h"
 
 class Status
 {
@@ -31,6 +32,8 @@ public:
 	// 获得后继边内容
 	std::vector<Type> nextContents();
 	bool inStats(Stats stats);
+	bool next(Status* stat);
+	bool previous(Status* stat);
 
 private:
 	bool isEnd;
@@ -72,9 +75,11 @@ public:
 private:
 	Status* startStat;
 	Status* endStat;
-	void markValid();
 	// bfs遍历过程中处理数据
 	void bfs(StatDealer dealer);
 	// 若图中所有节点都是检查过的, 则函数可将所有节点置为未检查状态
 	void resetChecked();
+	void markValid();
+	void eraseInvalid();
+
 };

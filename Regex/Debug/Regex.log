@@ -1,7 +1,2 @@
-﻿  GraphManager.cpp
-  DataType.cpp
-c:\users\asus\documents\github\regex\regex\datatype.cpp(63): error C2059: 语法错误:“}”
-  正在生成代码...
-  正在跳过...(未检测到相关更改)
-  main.cpp
-  LinkManager.cpp
+﻿  DataType.cpp
+  Regex.vcxproj -> C:\Users\asus\Documents\GitHub\Regex\Regex\Debug\Regex.exe
