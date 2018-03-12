@@ -33,5 +33,4 @@ namespace Arithmetic
 
 	Node* calc(Node* root);
 	void test();
-
 }

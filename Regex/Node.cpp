@@ -5,33 +5,42 @@
 
 using namespace std;
 
-Node::Node(char cont)
-	: Node(cont, NULL, NULL)
+Node::Node(char que)
+	: Node(que, NULL, NULL)
 {
 }
 
-Node::Node(char cont, Node* lchild)
-	: Node(cont, lchild, NULL)
+Node::Node(char que, Node* lchild)
+	: Node(que, lchild, NULL)
 {
 }
 
-Node::Node(char cont, Node* lchild, Node* rchild)
-	: content(cont), lchild(lchild), rchild(rchild)
+Node::Node(char que, Node* lchild, Node* rchild)
+	: content(que), lchild(lchild), rchild(rchild)
 {
 }
 
 Node::~Node()
 {
-	if (this)
-	{
+	if(this->lchild)
 		delete this->lchild;
+	if (this->rchild)
 		delete this->rchild;
-	}
 }
 
 inline bool Node::isSymbol()
 {
 	return this->rchild || this->rchild;
+}
+
+inline bool Node::isBinOp()
+{
+	return this->lchild && this->rchild;
+}
+
+inline bool Node::isUnaOp()
+{
+	return this->lchild && !this->rchild;
 }
 
 inline char Node::getContent()
@@ -63,24 +72,44 @@ void Node::inOrderPrint()
 
 void Node::rowOrderPrint()
 {
-	queue<Node*> cont;
+	queue<Node*> que;
+	queue<char> branchQue; // 枝杈
 	// 保证push的非NULL
-	auto safe_push = [&cont](Node* value) {
+	auto safe_push = [&que](Node* value) {
 		if (value)
-			cont.push(value);
+			que.push(value);
+	};
+	auto branch_push = [&branchQue](Node* value) {
+		if (value) {
+			if (value->isBinOp()) {
+				branchQue.push('/');
+				branchQue.push('\\');
+			}
+			else if(value->isUnaOp()) {
+				branchQue.push('/');
+			}
+		}
 	};
 
 	safe_push(this);
-	while (!cont.empty())
+	while (!que.empty())
 	{
-		int count = cont.size();
+		int count = que.size();
 		while (count--)
 		{
-			Node* top = cont.front();
-			cont.pop();
+			Node* top = que.front();
+			que.pop();
 			cout << top->content << " ";
 			safe_push(top->lchild);
 			safe_push(top->rchild);
+			branch_push(top);
+		}
+		cout << endl;
+
+		while (!branchQue.empty())
+		{
+			cout << branchQue.front() << " ";
+			branchQue.pop();
 		}
 		cout << endl;
 	}

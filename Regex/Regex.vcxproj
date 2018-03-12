@@ -147,14 +147,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Arithmetic.cpp" />
+    <ClCompile Include="GraphManager.cpp" />
+    <ClCompile Include="LinkManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Regex.cpp" />
+    <ClCompile Include="EpsilonNFA.cpp" />
+    <ClCompile Include="DataType.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arithmetic.h" />
+    <ClInclude Include="Debug.h" />
+    <ClInclude Include="GraphManager.h" />
+    <ClInclude Include="LinkManager.h" />
+    <ClInclude Include="NFA.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Regex.h" />
+    <ClInclude Include="EpsilonNFA.h" />
+    <ClInclude Include="DataType.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

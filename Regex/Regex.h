@@ -26,4 +26,5 @@ private:
 
 	bool inExprSet(char);
 	bool inTermSet(char);
+	bool inCharSet(char);
 };

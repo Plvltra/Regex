@@ -10,6 +10,8 @@ public:
 
 public:
 	bool isSymbol();
+	bool isBinOp(); // 双目运算符
+	bool isUnaOp(); // 单目运算符
 	char getContent();
 	Node* getLchild();
 	Node* getRchild();

@@ -114,12 +114,20 @@ Node* Regex::parseCharSet()
 	return charSet;
 }
 
+// a|b, a&b, (...)
 inline bool Regex::inExprSet(char c)
 {
-	return c == '|' || c == '&' || isalpha(c) || isdigit(c) || c == '(';
+	return c == '|' || c == '&' || c == '(' || inCharSet(c);
 }
 
+// a*
 inline bool Regex::inTermSet(char c)
 {
 	return c == '*';
+}
+
+// a-z A-z 0-9
+inline bool Regex::inCharSet(char c)
+{
+	return isalpha(c) || isdigit(c);
 }
