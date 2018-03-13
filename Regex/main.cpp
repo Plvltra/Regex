@@ -40,8 +40,8 @@ int main()
 	Graphes graphes = { g1, g2, g3 };
 	Graph* g4 = GraphManager::bingLink(graphes);
 
-	GraphManager::epsToNFA(g4);
-	GraphManager::printGraph(g4);
+	g4->toNFA();
+	g4->printGraph();
 
 	//using Arithmetic::test;
 	//test();

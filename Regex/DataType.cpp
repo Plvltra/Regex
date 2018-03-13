@@ -78,6 +78,9 @@ void Graph::toNFA()
 	markValid();
 	eraseInvalid();
 
+	printGraph();
+	cout << "--------------" << endl;
+
 	auto deleteEps = [](Status* stat) {
 		StatQue sq;
 		for (auto next : stat->nextStats())
@@ -170,4 +173,47 @@ void Graph::eraseInvalid()
 			LinkManager::eraseStat(stat);
 	};
 	bfs(erase);
+}
+
+// 只能用一次
+void Graph::printGraph()
+{
+	queue<Status*> que;
+	queue<Type> typeQue;
+	int ID = 0;
+
+	Status* start = getStart();
+	start->ID = ++ID;
+	que.push(start);
+	while (!que.empty())
+	{
+		int size = que.size();
+		while (size--)
+		{
+			// 输出ID
+			Status* front = que.front();
+			que.pop();
+			cout << front->ID << boolalpha << front->getEnd() << " ";
+			// 添加边内容
+			Edges outEdges = front->getOutEdges();
+			for (auto edge : outEdges)
+				typeQue.push(edge->getContent());
+			// 添加下一节点
+			Stats nextStats = front->nextStats();
+			for (auto stat : nextStats)
+			{
+				if (!stat->ID) // 节点未入队过
+					stat->ID = ++ID;
+				que.push(stat);
+			}
+		}
+		cout << endl;
+
+		while (!typeQue.empty())
+		{
+			cout << typeQue.front() << " ";
+			typeQue.pop();
+		}
+		cout << endl;
+	}
 }

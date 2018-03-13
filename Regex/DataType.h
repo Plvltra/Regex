@@ -71,6 +71,7 @@ public:
 	Status* getStart() { return startStat; }
 	Status* getEnd() { return endStat; }
 	void toNFA();
+	void printGraph();
 
 private:
 	Status* startStat;

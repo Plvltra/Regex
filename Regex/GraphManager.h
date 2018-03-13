@@ -7,8 +7,6 @@
 class GraphManager
 {
 public:
-	static void epsToNFA(Graph* graph);
-	static void printGraph(Graph* graph);
 	// ´®Áª
 	static Graph* chuanLink(Graph* from, Graph* to);
 	// ²¢Áª
