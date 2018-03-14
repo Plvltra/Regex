@@ -12,6 +12,7 @@
 #include "DataType.h"
 #include "LinkManager.h"
 #include "GraphManager.h"
+#include "Graph.h"
 using namespace std;
 
 class Test
@@ -21,10 +22,6 @@ class Test
 
 int main()
 {
-	vector<int> v;
-	for (auto i : v)
-		cout << i << endl;
-
 	Status* s1 = new Status();
 	Status* e1 = new Status();
 	Status* s2 = new Status();
@@ -40,8 +37,16 @@ int main()
 	Graphes graphes = { g1, g2, g3 };
 	Graph* g4 = GraphManager::bingLink(graphes);
 
-	g4->toNFA();
-	g4->printGraph();
+	Status* s4 = new Status();
+	Status* e4 = new Status();
+	LinkManager::link(s4, e4, 'd');
+	Graph* g5 = new Graph(s4, e4);
+	
+	Graph* g6 = GraphManager::chuanLink(g4, g5);
+	//Graph* g6 = GraphManager::repeatLink(g4);
+	g6->printGraph();
+	g6->toNFA();
+	g6->printGraph();
 
 	//using Arithmetic::test;
 	//test();

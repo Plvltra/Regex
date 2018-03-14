@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <queue>
+#include <memory>
 #include <exception>
 
 #include "Debug.h"
@@ -19,3 +20,4 @@ typedef std::vector<Type> Conts;
 typedef std::queue<Status*> StatQue;
 
 typedef void StatDealer(Status*);
+

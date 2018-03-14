@@ -19,39 +19,43 @@ void LinkManager::cross(Status* from, Status* beCrossed)
 {
 	if (!from || !beCrossed)
 		return;
+	debug("Cross Link from: " + to_string(from->ID) + " beCrossed: " + to_string(beCrossed->ID));
+	level++;
 	Stats& tos = beCrossed->nextStats();
 	Conts& contents = beCrossed->nextContents();
 	int size = tos.size();
 	for (int i = 0; i < size; i++)
 		link(from, tos[i], contents[i]);
+	level--;
 }
 
 void LinkManager::skipStat(Status* from, Status* beSkiped)
 {
+	if (!from || !beSkiped)
+		return;
+	debug("Skip Stat from: " + to_string(from->ID) + " beSkiped: " + to_string(beSkiped->ID));
+	level++;
 	cross(from, beSkiped);
 	deleteLink(from, beSkiped);
 	if (beSkiped->getEnd())
 		from->setEnd(true);
+	level--;
 }
-
-//void LinkManager::link(Status* from, Stats& tos, Conts& contents)
-//{
-//	if (tos.size() != contents.size())
-//		throw exception("连接失败，存在空指针");
-//
-//	int size = tos.size();
-//	for (int i = 0; i < size; i++)
-//		link(from, tos[i], contents[i]);
-//}
 
 void LinkManager::eraseStat(Status* stat)
 {
 	if (!stat)
 		return;
-	for (auto preStat : stat->preStats()) // 转换前一节点与此节点的连接
+	debug("Erase Status ID: " + to_string(stat->ID));
+	level++;
+	// 转换前一节点与此节点的连接
+	for (auto preStat : stat->preStats())
+	{
 		skipStat(preStat, stat);
+	}
 	deleteLinks(stat, stat->nextStats()); // 删去出的边
 	delete(stat);
+	level--;
 }
 
 bool LinkManager::isLinked(Status* stat1, Status* stat2)
@@ -91,6 +95,7 @@ void LinkManager::deleteLink(Status* stat1, Status* stat2)
 		return;
 	else if (edge->getFrom() != stat1)
 		deleteLink(stat2, stat1);
+	debug("Delete Link from: " + to_string(stat1->ID) + " to: " + to_string(stat2->ID));
 
 	// 从容器中删除
 	Edges& outEdges = stat1->getOutEdges();
@@ -116,4 +121,19 @@ void LinkManager::deleteElem(Edges& edges, StatusEdge* elem)
 			return;
 		}
 	}
+}
+
+//---------------------- Debug ----------------------//
+int LinkManager::level = 0;
+
+void LinkManager::tab(int n)
+{
+	while (n--)
+		print("    ");
+}
+
+void LinkManager::debug(string s)
+{
+	tab(level);
+	println(s);
 }

@@ -1,2 +1,12 @@
-﻿  DataType.cpp
+﻿  StatSet.cpp
+  正在生成代码...
+  正在编译...
+  main.cpp
+  LinkManager.cpp
+  GraphManager.cpp
+  Graph.cpp
+  EpsilonNFA.cpp
+  DataType.cpp
+  正在生成代码...
+c:\users\asus\documents\github\regex\regex\linkmanager.cpp(82): warning C4715: “LinkManager::getLink”: 不是所有的控件路径都返回值
   Regex.vcxproj -> C:\Users\asus\Documents\GitHub\Regex\Regex\Debug\Regex.exe

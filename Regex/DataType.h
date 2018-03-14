@@ -27,6 +27,7 @@ public:
 	Edges& getOutEdges() { return outEdges; }
 	// 获得后继状态
 	Stats nextStats();
+	Stats nextStats(Type linkCont); // 指定连接内容
 	// 获得前驱状态
 	Stats preStats();
 	// 获得后继边内容
@@ -60,27 +61,4 @@ private:
 	Type content;
 	Status* fromStat;
 	Status* toStat;
-};
-
-class Graph
-{
-public:
-	// Constructors & Destructors
-	Graph(Status* startStat, Status* endStat);
-	// Functions
-	Status* getStart() { return startStat; }
-	Status* getEnd() { return endStat; }
-	void toNFA();
-	void printGraph();
-
-private:
-	Status* startStat;
-	Status* endStat;
-	// bfs遍历过程中处理数据
-	void bfs(StatDealer dealer);
-	// 若图中所有节点都是检查过的, 则函数可将所有节点置为未检查状态
-	void resetChecked();
-	void markValid();
-	void eraseInvalid();
-
 };
