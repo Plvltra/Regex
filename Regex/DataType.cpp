@@ -5,8 +5,8 @@ using namespace std;
 // StatusÀà
 Status::~Status()
 {
-	LinkManager::deleteLinks(this, this->nextStats());
-	LinkManager::deleteLinks(this, this->preStats());
+	LinkManager::deleteLinks(StatPtr(this), this->nextStats());
+	LinkManager::deleteLinks(StatPtr(this), this->preStats());
 }
 
 Stats Status::nextStats()
@@ -49,21 +49,22 @@ bool Status::inStats(Stats stats)
 {
 	for (auto stat : stats)
 	{
-		if (this == stat)
+		StatPtr thisStat(this);
+		if (thisStat == stat)
 			return true;
 	}
 	return false;
 }
 
-bool Status::next(Status* stat)
+bool Status::next(StatPtr stat)
 {
 	if (stat)
-		return stat->previous(this);
+		return stat->previous(StatPtr(this));
 	else
 		return false;
 }
 
-bool Status::previous(Status* stat)
+bool Status::previous(StatPtr stat)
 {
 	if (stat)
 	{

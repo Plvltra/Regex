@@ -1,8 +1,38 @@
-﻿  Graph.cpp
-c:\users\asus\documents\github\regex\regex\graph.cpp(40): error C2440: “<function-style-cast>”: 无法从“Graph *”转换为“DFAMatrix”
-  c:\users\asus\documents\github\regex\regex\graph.cpp(40): note: 无构造函数可以接受源类型，或构造函数重载决策不明确
-c:\users\asus\documents\github\regex\regex\graph.cpp(40): error C2512: “DFAMatrix”: 没有合适的默认构造函数可用
-  c:\users\asus\documents\github\regex\regex\dfamatrix.h(31): note: 参见“DFAMatrix”的声明
+﻿  StatSet.cpp
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1225): error C2027: 使用了未定义类型“Graph”
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1232): note: 参见对正在编译的 类 模板 实例化 "std::aligned_union<1,_Ty>" 的引用
+          with
+          [
+              _Ty=Graph
+          ]
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1868): note: 参见对正在编译的 别名 模板 实例化 "aligned_union_t<1,Graph>" 的引用
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1914): note: 参见对正在编译的 类 模板 实例化 "std::_Ref_count_obj<_Ty>" 的引用
+          with
+          [
+              _Ty=Graph
+          ]
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(42): note: 参见对正在编译的函数 模板 实例化“std::shared_ptr<Graph> std::make_shared<Graph,StatPtr&>(StatPtr &)”的引用
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1226): error C2027: 使用了未定义类型“Graph”
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
+  LinkManager.cpp
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1225): error C2027: 使用了未定义类型“Graph”
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1232): note: 参见对正在编译的 类 模板 实例化 "std::aligned_union<1,_Ty>" 的引用
+          with
+          [
+              _Ty=Graph
+          ]
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1868): note: 参见对正在编译的 别名 模板 实例化 "aligned_union_t<1,Graph>" 的引用
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1914): note: 参见对正在编译的 类 模板 实例化 "std::_Ref_count_obj<_Ty>" 的引用
+          with
+          [
+              _Ty=Graph
+          ]
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(42): note: 参见对正在编译的函数 模板 实例化“std::shared_ptr<Graph> std::make_shared<Graph,StatPtr&>(StatPtr &)”的引用
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1226): error C2027: 使用了未定义类型“Graph”
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
+  Graph.cpp
   EpsilonNFA.cpp
 d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1225): error C2027: 使用了未定义类型“Status”
   c:\users\asus\documents\github\regex\regex\epsilonnfa.h(13): note: 参见“Status”的声明
@@ -17,15 +47,58 @@ d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1225): error C20
           [
               _Ty=Status
           ]
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(30): note: 参见对正在编译的函数 模板 实例化“std::shared_ptr<Status> std::make_shared<Status,bool&,int&>(bool &,int &)”的引用
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(32): note: 参见对正在编译的函数 模板 实例化“std::shared_ptr<Status> std::make_shared<Status,>(void)”的引用
 d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1226): error C2027: 使用了未定义类型“Status”
   c:\users\asus\documents\github\regex\regex\epsilonnfa.h(13): note: 参见“Status”的声明
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1225): error C2027: 使用了未定义类型“Graph”
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1232): note: 参见对正在编译的 类 模板 实例化 "std::aligned_union<1,_Ty>" 的引用
+          with
+          [
+              _Ty=Graph
+          ]
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1868): note: 参见对正在编译的 别名 模板 实例化 "aligned_union_t<1,Graph>" 的引用
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1914): note: 参见对正在编译的 类 模板 实例化 "std::_Ref_count_obj<_Ty>" 的引用
+          with
+          [
+              _Ty=Graph
+          ]
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(42): note: 参见对正在编译的函数 模板 实例化“std::shared_ptr<Graph> std::make_shared<Graph,StatPtr&>(StatPtr &)”的引用
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1226): error C2027: 使用了未定义类型“Graph”
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1225): error C2027: 使用了未定义类型“StatusEdge”
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(14): note: 参见“StatusEdge”的声明
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1232): note: 参见对正在编译的 类 模板 实例化 "std::aligned_union<1,_Ty>" 的引用
+          with
+          [
+              _Ty=StatusEdge
+          ]
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1868): note: 参见对正在编译的 别名 模板 实例化 "aligned_union_t<1,StatusEdge>" 的引用
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1914): note: 参见对正在编译的 类 模板 实例化 "std::_Ref_count_obj<_Ty>" 的引用
+          with
+          [
+              _Ty=StatusEdge
+          ]
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(52): note: 参见对正在编译的函数 模板 实例化“std::shared_ptr<StatusEdge> std::make_shared<StatusEdge,Type&,StatPtr&,StatPtr&>(Type &,StatPtr &,StatPtr &)”的引用
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1226): error C2027: 使用了未定义类型“StatusEdge”
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(14): note: 参见“StatusEdge”的声明
+  DataType.cpp
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1225): error C2027: 使用了未定义类型“Graph”
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1232): note: 参见对正在编译的 类 模板 实例化 "std::aligned_union<1,_Ty>" 的引用
+          with
+          [
+              _Ty=Graph
+          ]
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1868): note: 参见对正在编译的 别名 模板 实例化 "aligned_union_t<1,Graph>" 的引用
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1914): note: 参见对正在编译的 类 模板 实例化 "std::_Ref_count_obj<_Ty>" 的引用
+          with
+          [
+              _Ty=Graph
+          ]
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(42): note: 参见对正在编译的函数 模板 实例化“std::shared_ptr<Graph> std::make_shared<Graph,StatPtr&>(StatPtr &)”的引用
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1226): error C2027: 使用了未定义类型“Graph”
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
   DFAMatrix.cpp
   正在生成代码...
-c:\users\asus\documents\github\regex\regex\dfamatrix.cpp(17): error C4716: “DFAMatrix::buildGraph”: 必须返回一个值
-  正在跳过...(未检测到相关更改)
-  StatSet.cpp
-  LinkManager.cpp
-  DataType.cpp
-  main.cpp
-  GraphManager.cpp
+c:\users\asus\documents\github\regex\regex\dfamatrix.cpp(52): warning C4715: “DFAMatrix::toStat”: 不是所有的控件路径都返回值

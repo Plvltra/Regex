@@ -14,18 +14,40 @@ class Status;
 class StatusEdge;
 class Graph;
 class StatSet;
-typedef std::vector<StatusEdge*> Edges;
-typedef std::vector<Status*> Stats;
-typedef std::vector<Graph*> Graphes;
-typedef std::vector<Type> Conts;
-typedef std::queue<Status*> StatQue;
-
-typedef void StatDealer(Status*);
 typedef std::shared_ptr<StatSet> StatSetPtr;
 typedef std::shared_ptr<Status> StatPtr;
+typedef std::shared_ptr<StatusEdge> EdgePtr;
 typedef std::shared_ptr<Graph> GraphPtr;
- 
-inline StatPtr makeStatPtr(bool isEnd, int ID)
+
+typedef std::vector<EdgePtr> Edges;
+typedef std::vector<StatPtr> Stats;
+typedef std::vector<GraphPtr> Graphes;
+typedef std::vector<Type> Conts;
+typedef std::queue<StatPtr> StatQue;
+
+typedef void StatDealer(StatPtr);
+
+StatPtr makeStatPtr()
+{
+	return std::make_shared<Status>();
+}
+
+StatPtr makeStatPtr(bool isEnd, int ID)
 {
 	return std::make_shared<Status>(isEnd, ID);
+}
+
+GraphPtr makeGraphPtr(StatPtr start)
+{
+	return std::make_shared<Graph>(start);
+}
+
+GraphPtr makeGraphPtr(StatPtr start, StatPtr end)
+{
+	return std::make_shared<Graph>(start, end);
+}
+
+EdgePtr makeEdgePtr(Type content, StatPtr fromStat, StatPtr toStat)
+{
+	return std::make_shared<StatusEdge>(content, fromStat, toStat);
 }

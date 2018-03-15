@@ -4,19 +4,19 @@
 using namespace std;
 
 // 串联
-Graph* GraphManager::chuanLink(Graph* from, Graph* to)
+GraphPtr GraphManager::chuanLink(GraphPtr from, GraphPtr to)
 {
-	Status* end1 = from->getEnd(); // from图的结束
-	Status* start2 = to->getStart(); // end图的开始
+	StatPtr end1 = from->getEnd(); // from图的结束
+	StatPtr start2 = to->getStart(); // end图的开始
 	end1->setEnd(false);
 	LinkManager::link(end1, start2, epsilon);
-	return new Graph(from->getStart(), to->getEnd());
+	return makeGraphPtr(from->getStart(), to->getEnd());
 }
 // 并联
-Graph* GraphManager::bingLink(Graphes& graphes)
+GraphPtr GraphManager::bingLink(Graphes& graphes)
 {
-	Status* newStart = new Status();
-	Status* newEnd = new Status();
+	StatPtr newStart = makeStatPtr();
+	StatPtr newEnd = makeStatPtr();
 	newEnd->setEnd(true);
 	for (auto graph : graphes)
 	{
@@ -24,15 +24,15 @@ Graph* GraphManager::bingLink(Graphes& graphes)
 		LinkManager::link(newStart, graph->getStart(), epsilon);
 		LinkManager::link(graph->getEnd(), newEnd, epsilon);
 	}
-	return new Graph(newStart, newEnd);
+	return makeGraphPtr(newStart, newEnd);
 }
 // 重复
-Graph* GraphManager::repeatLink(Graph* graph)
+GraphPtr GraphManager::repeatLink(GraphPtr graph)
 {
-	Status* start = graph->getStart();
-	Status* end = graph->getEnd();
-	Status* newStart = new Status();
-	Status* newEnd = new Status();
+	StatPtr start = graph->getStart();
+	StatPtr end = graph->getEnd();
+	StatPtr newStart = makeStatPtr();
+	StatPtr newEnd = makeStatPtr();
 	LinkManager::link(newStart, start, epsilon);
 	LinkManager::link(end, newEnd, epsilon);
 	LinkManager::link(newStart, newEnd, epsilon);
@@ -40,5 +40,5 @@ Graph* GraphManager::repeatLink(Graph* graph)
 
 	end->setEnd(false);
 	newEnd->setEnd(true);
-	return new Graph(newStart, newEnd);
+	return makeGraphPtr(newStart, newEnd);
 }

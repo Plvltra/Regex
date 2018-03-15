@@ -9,11 +9,11 @@ class Graph
 {
 public:
 	// Constructors & Destructors
-	Graph(Status* start);
-	Graph(Status* startStat, Status* endStat);
+	Graph(StatPtr start);
+	Graph(StatPtr startStat, StatPtr endStat);
 	// Functions
-	Status* getStart() { return startStat; }
-	Status* getEnd() { return endStat; }
+	StatPtr getStart() { return startStat; }
+	StatPtr getEnd() { return endStat; }
 	void toNFA(); // epsNFA ->NFA
 	void toDFA(); // NFA -> DFA
 	void printGraph();
@@ -21,8 +21,8 @@ public:
 
 private:
 	// Attributes
-	Status * startStat;
-	Status* endStat;
+	StatPtr startStat;
+	StatPtr endStat;
 	static int MAX_ID; // 从1开始
 	// Functions
 	void bfs(StatDealer dealer); // bfs遍历过程中处理数据
@@ -33,5 +33,4 @@ private:
 	// 重新分配ID
 	void assignID();
 	void resetID();
-	void deleteTree();
 };

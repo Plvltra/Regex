@@ -1,17 +1,18 @@
 #include <set>
 
 #include "Graph.h"
+#include "DataType.h"
 using namespace std;
 
 // Graph类
 int Graph::MAX_ID = 0;
 
-Graph::Graph(Status* start)
+Graph::Graph(StatPtr start)
 {
 	startStat = start;
 }
-
-Graph::Graph(Status* startStat, Status* endStat)
+// TODO: debug
+Graph::Graph(StatPtr startStat, StatPtr endStat)
 	: startStat(startStat), endStat(endStat)
 {
 	if (!startStat || !endStat)
@@ -24,7 +25,7 @@ void Graph::toNFA()
 	markValid();
 	eraseInvalid();
 
-	auto deleteEpsEdge = [](Status* stat) {
+	auto deleteEpsEdge = [](StatPtr stat) {
 		for (auto next : stat->nextStats())
 		{
 			if (LinkManager::getLinkCont(stat, next) == epsilon)
@@ -34,7 +35,10 @@ void Graph::toNFA()
 	bfs(deleteEpsEdge);
 }
 
-void Graph::toDFA();
+void Graph::toDFA()
+{
+	// TODO:
+}
 
 void Graph::bfs(StatDealer dealer)
 {
@@ -43,7 +47,7 @@ void Graph::bfs(StatDealer dealer)
 	startStat->checked = true;
 	while (!sq.empty())
 	{
-		Status* front = sq.front();
+		StatPtr front = sq.front();
 		sq.pop();
 		// Add next stats
 		Stats nextStats = front->nextStats();
@@ -67,7 +71,7 @@ void Graph::resetChecked()
 	startStat->checked = false;
 	while (!sq.empty())
 	{
-		Status* front = sq.front();
+		StatPtr front = sq.front();
 		sq.pop();
 		// Add next stats
 		Stats nextStats = front->nextStats();
@@ -85,7 +89,7 @@ void Graph::resetChecked()
 void Graph::markValid()
 {
 	// 进入边全为eps则设为无效
-	auto setValid = [](Status* stat) {
+	auto setValid = [](StatPtr stat) {
 		Edges inEdges = stat->getInEdges();
 		bool useful = false;
 		for (auto edge : inEdges)
@@ -105,7 +109,7 @@ void Graph::markValid()
 
 void Graph::eraseInvalid()
 {
-	auto erase = [](Status* stat) {
+	auto erase = [](StatPtr stat) {
 		if (!stat->valid)
 			LinkManager::eraseStat(stat);
 	};
@@ -117,10 +121,10 @@ void Graph::eraseInvalid()
 void Graph::printGraph()
 {
 	assignID();
-	queue<Status*> que;
+	queue<StatPtr> que;
 	queue<Type> typeQue;
 
-	Status* start = getStart();
+	StatPtr start = getStart();
 	que.push(start);
 	while (!que.empty())
 	{
@@ -128,7 +132,7 @@ void Graph::printGraph()
 		while (size--)
 		{
 			// 输出ID
-			Status* front = que.front();
+			StatPtr front = que.front();
 			que.pop();
 			cout << front->ID << boolalpha << front->getEnd() << " ";
 			// 添加边内容
@@ -157,7 +161,7 @@ void Graph::printGraph()
 void Graph::assignID()
 {
 	resetID();
-	auto assign = [](Status* stat) {
+	auto assign = [](StatPtr stat) {
 		stat->ID = ++MAX_ID;
 	};
 	bfs(assign);
@@ -165,17 +169,9 @@ void Graph::assignID()
 
 void Graph::resetID()
 {
-	auto reset = [](Status* stat) {
+	auto reset = [](StatPtr stat) {
 		stat->ID = 0;
 	};
 	bfs(reset);
 	MAX_ID = 0;
-}
-
-void Graph::deleteTree()
-{
-	auto deleteStat = [](Status* stat) {
-		delete stat;
-	};
-	bfs(deleteStat);
 }

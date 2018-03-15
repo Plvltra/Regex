@@ -13,7 +13,7 @@ public:
 	StatSet() = default;
 	StatSet(Stats& stats);
 	// Functions
-	void insert(Status* stat);
+	void insert(StatPtr stat);
 	bool operator== (const StatSet& other) const;
 	/* @func: 返回此状态集进过一步符号变换得到的状态集
 	   @return:   返回下一个状态集, NULL对应状态集为空, */
@@ -26,5 +26,5 @@ public:
 	bool isEnd;
 
 private:
-	std::set<Status*> elems;
+	std::set<StatPtr> elems;
 };

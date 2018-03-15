@@ -9,11 +9,11 @@ class GraphManager
 {
 public:
 	// 串联
-	static Graph* chuanLink(Graph* from, Graph* to);
+	static GraphPtr chuanLink(GraphPtr from, GraphPtr to);
 	// 并联
-	static Graph* bingLink(Graphes& graphes);
+	static GraphPtr bingLink(Graphes& graphes);
 	// 重复 TODO: Debug
-	static Graph* repeatLink(Graph* graph);
+	static GraphPtr repeatLink(GraphPtr graph);
 
 private:
 

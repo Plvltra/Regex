@@ -14,7 +14,7 @@ StatSet::StatSet(Stats& stats)
 	}
 }
 
-inline void StatSet::insert(Status* stat)
+inline void StatSet::insert(StatPtr stat)
 {
 	elems.insert(stat);
 }

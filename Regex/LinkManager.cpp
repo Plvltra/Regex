@@ -3,19 +3,19 @@
 
 using namespace std;
 
-void LinkManager::link(StatPtr from, Status* to, Type content)
+void LinkManager::link(StatPtr from, StatPtr to, Type content)
 {
 	if (!from || !to)
 		throw exception("连接失败，存在空指针");
 	if (isLinked(from, to))
 		return;
 
-	StatusEdge* edge = new StatusEdge(content, from, to);
+	EdgePtr edge = makeEdgePtr(content, from, to);
 	from->addOutEdge(edge);
 	to->addInEdge(edge);
 }
 
-void LinkManager::cross(Status* from, Status* beCrossed)
+void LinkManager::cross(StatPtr from, StatPtr beCrossed)
 {
 	if (!from || !beCrossed)
 		return;
@@ -29,7 +29,7 @@ void LinkManager::cross(Status* from, Status* beCrossed)
 	level--;
 }
 
-void LinkManager::skipStat(Status* from, Status* beSkiped)
+void LinkManager::skipStat(StatPtr from, StatPtr beSkiped)
 {
 	if (!from || !beSkiped)
 		return;
@@ -42,7 +42,7 @@ void LinkManager::skipStat(Status* from, Status* beSkiped)
 	level--;
 }
 
-void LinkManager::eraseStat(Status* stat)
+void LinkManager::eraseStat(StatPtr stat)
 {
 	if (!stat)
 		return;
@@ -54,18 +54,17 @@ void LinkManager::eraseStat(Status* stat)
 		skipStat(preStat, stat);
 	}
 	deleteLinks(stat, stat->nextStats()); // 删去出的边
-	delete(stat);
 	level--;
 }
 
-bool LinkManager::isLinked(Status* stat1, Status* stat2)
+bool LinkManager::isLinked(StatPtr stat1, StatPtr stat2)
 {
 	if (stat1 == NULL || stat2 == NULL)
 		return false;
 	return stat1->next(stat2) || stat1->previous(stat2);
 }
 
-StatusEdge* LinkManager::getLink(Status* stat1, Status* stat2)
+EdgePtr LinkManager::getLink(StatPtr stat1, StatPtr stat2)
 {
 	// 保持先后顺序
 	if (!isLinked(stat1, stat2))
@@ -81,16 +80,16 @@ StatusEdge* LinkManager::getLink(Status* stat1, Status* stat2)
 	}
 }
 
-Type LinkManager::getLinkCont(Status* stat1, Status* stat2)
+Type LinkManager::getLinkCont(StatPtr stat1, StatPtr stat2)
 {
 	auto edge = getLink(stat1, stat2);
 	return edge->getContent();
 }
 
-void LinkManager::deleteLink(Status* stat1, Status* stat2)
+void LinkManager::deleteLink(StatPtr stat1, StatPtr stat2)
 {
 	// 保持顺序
-	StatusEdge* edge = getLink(stat1, stat2);
+	EdgePtr edge = getLink(stat1, stat2);
 	if (!edge)
 		return;
 	else if (edge->getFrom() != stat1)
@@ -102,16 +101,15 @@ void LinkManager::deleteLink(Status* stat1, Status* stat2)
 	Edges& inEdges = stat2->getInEdges();
 	deleteElem(outEdges, edge);
 	deleteElem(inEdges, edge);
-	delete edge; 
 }
 
-void LinkManager::deleteLinks(Status* stat, Stats& stats)
+void LinkManager::deleteLinks(StatPtr stat, Stats& stats)
 {
-	for (Status* stat2 : stats)
+	for (StatPtr stat2 : stats)
 		deleteLink(stat, stat2);
 }
 
-void LinkManager::deleteElem(Edges& edges, StatusEdge* elem) 
+void LinkManager::deleteElem(Edges& edges, EdgePtr elem) 
 {
 	for (auto itr = edges.begin(); itr != edges.end(); itr++)
 	{

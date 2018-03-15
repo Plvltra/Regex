@@ -1,6 +1,7 @@
 
 #include "DFAMatrix.h"
 #include "StatSet.h"
+#include "DataType.h"
 
 using namespace std;
 
@@ -13,14 +14,18 @@ DFAMatrix::DFAMatrix(StatSetPtr start)
 
 GraphPtr DFAMatrix::buildGraph()
 {
-	vector<StatPtr> stats;
 	for (int i = 0; i < MAX_ROW; i++)
 	{
 		StatPtr firstElem = toStat(matrix[i][0]);
 		for (int j = 1; j < SIZE; j++)
-			LinkManager::link(firstElem, matrix[i][j], (char)j);
-		stats.push_back(firstElem);
+		{
+			auto nextElem = toStat(matrix[i][j]);
+			if(nextElem)
+				LinkManager::link(firstElem, nextElem, (char)j);
+		}
 	}
+	StatPtr start = toStat(matrix[0][0]);
+	return makeGraphPtr(start);
 }
 
 void DFAMatrix::extend()
@@ -31,12 +36,19 @@ void DFAMatrix::extend()
 
 inline int DFAMatrix::toID(StatSetPtr set)
 {
-	return setMap[set];
+	if (set == NULL)
+		return 0;
+	return IDMap[set];
 }
 
 StatPtr DFAMatrix::toStat(StatSetPtr set)
 {
-	return makeStatPtr(set->isEnd, toID(set));
+	if (set == NULL)
+		return NULL;
+	if (!statMap.count(set))
+		statMap[set] = makeStatPtr(set->isEnd, toID(set));
+	else
+		return statMap[set];
 }
 
 void DFAMatrix::rowExtend(int rowIndex)
@@ -51,9 +63,9 @@ void DFAMatrix::rowExtend(int rowIndex)
 		// 若存在添加进map及新行中
 		if (extend)
 		{
-			if (!setMap.count(extend))
+			if (!IDMap.count(extend))
 			{
-				setMap[extend] = ++MAX_ID;
+				IDMap[extend] = ++MAX_ID;
 				insertRow(extend);
 			}
 		}

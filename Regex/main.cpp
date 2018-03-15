@@ -15,44 +15,30 @@
 #include "Graph.h"
 using namespace std;
 
-class Test
-{
-public:
-	int *b;
-};
-
-
 int main()
 {
-
-	Test t;
-	{
-		int *save = new int(5);
-		t.b = save;
-	}
-	cout << t.b;
-	Status* s1 = new Status();
-	Status* e1 = new Status();
-	Status* s2 = new Status();
-	Status* e2 = new Status();
-	Status* s3 = new Status();
-	Status* e3 = new Status();
+	StatPtr s1 = makeStatPtr();
+	StatPtr e1 = makeStatPtr();
+	StatPtr s2 = makeStatPtr();
+	StatPtr e2 = makeStatPtr();
+	StatPtr s3 = makeStatPtr();
+	StatPtr e3 = makeStatPtr();
 	LinkManager::link(s1, e1, 'a');
 	LinkManager::link(s2, e2, 'b');
 	LinkManager::link(s3, e3, 'c');
-	Graph* g1 = new Graph(s1, e1);
-	Graph* g2 = new Graph(s2, e2);
-	Graph* g3 = new Graph(s3, e3);
+	GraphPtr g1 = makeGraphPtr(s1, e1);
+	GraphPtr g2 = makeGraphPtr(s2, e2);
+	GraphPtr g3 = makeGraphPtr(s3, e3);
 	Graphes graphes = { g1, g2, g3 };
-	Graph* g4 = GraphManager::bingLink(graphes);
+	GraphPtr g4 = GraphManager::bingLink(graphes);
 
-	Status* s4 = new Status();
-	Status* e4 = new Status();
+	StatPtr s4 = makeStatPtr();
+	StatPtr e4 = makeStatPtr();
 	LinkManager::link(s4, e4, 'd');
-	Graph* g5 = new Graph(s4, e4);
+	GraphPtr g5 = makeGraphPtr(s4, e4);
 	
-	Graph* g6 = GraphManager::chuanLink(g4, g5);
-	//Graph* g6 = GraphManager::repeatLink(g4);
+	GraphPtr g6 = GraphManager::chuanLink(g4, g5);
+	//GraphPtr g6 = GraphManager::repeatLink(g4);
 	g6->printGraph();
 	g6->toNFA();
 	g6->printGraph();
