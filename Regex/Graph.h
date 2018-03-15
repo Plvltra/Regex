@@ -2,11 +2,14 @@
 
 #include "EpsilonNFA.h"
 #include "DataType.h"
+#include "StatSet.h"
+#include "DFAMatrix.h"
 
 class Graph
 {
 public:
 	// Constructors & Destructors
+	Graph(Status* start);
 	Graph(Status* startStat, Status* endStat);
 	// Functions
 	Status* getStart() { return startStat; }

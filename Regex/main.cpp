@@ -17,11 +17,20 @@ using namespace std;
 
 class Test
 {
-	const static int a = 5;
+public:
+	int *b;
 };
+
 
 int main()
 {
+
+	Test t;
+	{
+		int *save = new int(5);
+		t.b = save;
+	}
+	cout << t.b;
 	Status* s1 = new Status();
 	Status* e1 = new Status();
 	Status* s2 = new Status();

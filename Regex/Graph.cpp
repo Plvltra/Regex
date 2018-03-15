@@ -6,6 +6,11 @@ using namespace std;
 // Graph¿‡
 int Graph::MAX_ID = 0;
 
+Graph::Graph(Status* start)
+{
+	startStat = start;
+}
+
 Graph::Graph(Status* startStat, Status* endStat)
 	: startStat(startStat), endStat(endStat)
 {
@@ -29,10 +34,7 @@ void Graph::toNFA()
 	bfs(deleteEpsEdge);
 }
 
-void Graph::toDFA()
-{
-
-}
+void Graph::toDFA();
 
 void Graph::bfs(StatDealer dealer)
 {

@@ -11,6 +11,7 @@ public:
 	bool valid;
 	// Constructors & Destructors
 	Status() :isEnd(false), ID(0), checked(false), valid(false) {}
+	Status(bool isEnd, int ID) :isEnd(isEnd), ID(ID), checked(false), valid(false) {}
 	virtual ~Status();
 	// Functions
 	void setEnd(bool isEnd) { this->isEnd = isEnd; }

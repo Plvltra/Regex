@@ -27,9 +27,6 @@
     <ClCompile Include="Regex.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="EpsilonNFA.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="LinkManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -46,6 +43,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DFAMatrix.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EpsilonNFA.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

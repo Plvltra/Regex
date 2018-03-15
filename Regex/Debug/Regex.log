@@ -1,12 +1,31 @@
-﻿  StatSet.cpp
-  正在生成代码...
-  正在编译...
-  main.cpp
-  LinkManager.cpp
-  GraphManager.cpp
-  Graph.cpp
+﻿  Graph.cpp
+c:\users\asus\documents\github\regex\regex\graph.cpp(40): error C2440: “<function-style-cast>”: 无法从“Graph *”转换为“DFAMatrix”
+  c:\users\asus\documents\github\regex\regex\graph.cpp(40): note: 无构造函数可以接受源类型，或构造函数重载决策不明确
+c:\users\asus\documents\github\regex\regex\graph.cpp(40): error C2512: “DFAMatrix”: 没有合适的默认构造函数可用
+  c:\users\asus\documents\github\regex\regex\dfamatrix.h(31): note: 参见“DFAMatrix”的声明
   EpsilonNFA.cpp
-  DataType.cpp
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1225): error C2027: 使用了未定义类型“Status”
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(13): note: 参见“Status”的声明
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1232): note: 参见对正在编译的 类 模板 实例化 "std::aligned_union<1,_Ty>" 的引用
+          with
+          [
+              _Ty=Status
+          ]
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1868): note: 参见对正在编译的 别名 模板 实例化 "aligned_union_t<1,Status>" 的引用
+  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1914): note: 参见对正在编译的 类 模板 实例化 "std::_Ref_count_obj<_Ty>" 的引用
+          with
+          [
+              _Ty=Status
+          ]
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(30): note: 参见对正在编译的函数 模板 实例化“std::shared_ptr<Status> std::make_shared<Status,bool&,int&>(bool &,int &)”的引用
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1226): error C2027: 使用了未定义类型“Status”
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(13): note: 参见“Status”的声明
+  DFAMatrix.cpp
   正在生成代码...
-c:\users\asus\documents\github\regex\regex\linkmanager.cpp(82): warning C4715: “LinkManager::getLink”: 不是所有的控件路径都返回值
-  Regex.vcxproj -> C:\Users\asus\Documents\GitHub\Regex\Regex\Debug\Regex.exe
+c:\users\asus\documents\github\regex\regex\dfamatrix.cpp(17): error C4716: “DFAMatrix::buildGraph”: 必须返回一个值
+  正在跳过...(未检测到相关更改)
+  StatSet.cpp
+  LinkManager.cpp
+  DataType.cpp
+  main.cpp
+  GraphManager.cpp

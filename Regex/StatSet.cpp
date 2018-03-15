@@ -24,7 +24,7 @@ bool StatSet::operator== (const StatSet& other) const
 	return elems == other.elems;
 }
 
-shared_ptr<StatSet> StatSet::nextSet(Type linkCont)
+StatSetPtr StatSet::nextSet(Type linkCont)
 {
 	auto nextSet = make_shared<StatSet>();
 	for (auto elem : elems)
@@ -32,5 +32,8 @@ shared_ptr<StatSet> StatSet::nextSet(Type linkCont)
 		for (auto temp : elem->nextStats(linkCont))
 			nextSet->insert(temp);
 	}
-	return nextSet;
+	if (nextSet->empty())
+		return NULL;
+	else
+		return nextSet;
 }

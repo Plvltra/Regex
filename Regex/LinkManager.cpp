@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void LinkManager::link(Status* from, Status* to, Type content)
+void LinkManager::link(StatPtr from, Status* to, Type content)
 {
 	if (!from || !to)
 		throw exception("连接失败，存在空指针");
