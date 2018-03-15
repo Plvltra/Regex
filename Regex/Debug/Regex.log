@@ -1,104 +1,901 @@
-﻿  StatSet.cpp
-d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1225): error C2027: 使用了未定义类型“Graph”
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1232): note: 参见对正在编译的 类 模板 实例化 "std::aligned_union<1,_Ty>" 的引用
-          with
-          [
-              _Ty=Graph
-          ]
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1868): note: 参见对正在编译的 别名 模板 实例化 "aligned_union_t<1,Graph>" 的引用
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1914): note: 参见对正在编译的 类 模板 实例化 "std::_Ref_count_obj<_Ty>" 的引用
-          with
-          [
-              _Ty=Graph
-          ]
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(42): note: 参见对正在编译的函数 模板 实例化“std::shared_ptr<Graph> std::make_shared<Graph,StatPtr&>(StatPtr &)”的引用
-d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1226): error C2027: 使用了未定义类型“Graph”
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
+﻿  main.cpp
+c:\users\asus\documents\github\regex\regex\linkmanager.h(10): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(12): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(14): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(17): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(20): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(22): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C3646: “getLink”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2146: 语法错误: 缺少“)”(在标识符“stat1”的前面)
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C3646: “getLinkCont”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2146: 语法错误: 缺少“)”(在标识符“stat1”的前面)
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\linkmanager.h(29): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(30): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2061: 语法错误: 标识符“EdgePtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(20): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2061: 语法错误: 标识符“EdgePtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(24): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C3646: “nextStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C3646: “nextStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C3646: “preStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C2065: “Type”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C2923: “std::vector”: 对于参数“_Ty”，“Type”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C3203: “allocator”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Alloc”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\datatype.h(36): error C2061: 语法错误: 标识符“Stats”
+c:\users\asus\documents\github\regex\regex\datatype.h(37): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(38): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(42): error C3646: “inEdges”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(42): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(43): error C3646: “outEdges”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(43): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2065: “inEdges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2228: “.push_back”的左边必须有类/结构/联合
+  c:\users\asus\documents\github\regex\regex\datatype.h(19): note: 类型是“unknown-type”
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2065: “in”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C2065: “edges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C3312: 未找到可调用的“begin”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C3312: 未找到可调用的“end”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C2065: “edge”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2065: “outEdges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2228: “.push_back”的左边必须有类/结构/联合
+  c:\users\asus\documents\github\regex\regex\datatype.h(23): note: 类型是“unknown-type”
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2065: “out”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C2065: “edges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C3312: 未找到可调用的“begin”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C3312: 未找到可调用的“end”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C2065: “edge”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(50): error C2061: 语法错误: 标识符“Type”
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C3646: “getContent”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C3646: “getFrom”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C3646: “getTo”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(62): error C3646: “content”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(62): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(63): error C3646: “fromStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(63): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(64): error C3646: “toStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(64): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “content”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “fromStat”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “toStat”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“content”不是基或成员
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“fromStat”不是基或成员
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“toStat”不是基或成员
+c:\users\asus\documents\github\regex\regex\statset.h(14): error C2061: 语法错误: 标识符“Stats”
+c:\users\asus\documents\github\regex\regex\statset.h(14): error C2535: “StatSet::StatSet(void)”: 已经定义或声明成员函数
+  c:\users\asus\documents\github\regex\regex\statset.h(13): note: 参见“StatSet::StatSet”的声明
+c:\users\asus\documents\github\regex\regex\statset.h(16): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C3646: “nextSet”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C2923: “std::set”: 对于参数“_Kty”，“StatPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C3203: “less”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Pr”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C3203: “allocator”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Alloc”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\statset.h(21): error C2663: “std::_Tree<_Traits>::begin”: 2 个重载没有“this”指针的合法转换
+c:\users\asus\documents\github\regex\regex\statset.h(22): error C2663: “std::_Tree<_Traits>::end”: 2 个重载没有“this”指针的合法转换
+c:\users\asus\documents\github\regex\regex\statset.h(23): error C2662: “_Tree_comp_alloc<_Traits>::_Val_types::size_type std::_Tree<_Traits>::size(void) noexcept const”: 不能将“this”指针从“std::set”转换为“const std::_Tree<_Traits> &”
+  c:\users\asus\documents\github\regex\regex\statset.h(23): note: 原因如下: 无法从“std::set”转换为“const std::_Tree<_Traits>”
+  c:\users\asus\documents\github\regex\regex\statset.h(23): note: 转换要求第二个用户定义的转换运算符或构造函数
+c:\users\asus\documents\github\regex\regex\statset.h(24): error C2662: “bool std::_Tree<_Traits>::empty(void) noexcept const”: 不能将“this”指针从“std::set”转换为“const std::_Tree<_Traits> &”
+  c:\users\asus\documents\github\regex\regex\statset.h(24): note: 原因如下: 无法从“std::set”转换为“const std::_Tree<_Traits>”
+  c:\users\asus\documents\github\regex\regex\statset.h(24): note: 转换要求第二个用户定义的转换运算符或构造函数
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2061: 语法错误: 标识符“StatSetPtr”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C3646: “arr”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2143: 语法错误: 缺少“,”(在“[”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(18): error C2143: 语法错误: 缺少“;”(在“[”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(18): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(19): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(25): error C3646: “Elem”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(25): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2065: “arr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2065: “first”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): fatal error C1003: 错误计数超过 100；正在停止编译
+  StatSet.cpp
+c:\users\asus\documents\github\regex\regex\linkmanager.h(10): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(12): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(14): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(17): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(20): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(22): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C3646: “getLink”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2146: 语法错误: 缺少“)”(在标识符“stat1”的前面)
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C3646: “getLinkCont”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2146: 语法错误: 缺少“)”(在标识符“stat1”的前面)
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\linkmanager.h(29): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(30): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2061: 语法错误: 标识符“StatSetPtr”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C3646: “arr”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2143: 语法错误: 缺少“,”(在“[”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(18): error C2143: 语法错误: 缺少“;”(在“[”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(18): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(19): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(25): error C3646: “Elem”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(25): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2065: “arr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2065: “first”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(21): error C2065: “arr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(34): error C2061: 语法错误: 标识符“StatSetPtr”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(35): error C3646: “buildGraph”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(35): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(35): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(41): error C2065: “StatSetPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(41): error C2923: “std::map”: 对于参数“_Kty”，“StatSetPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(41): error C3203: “less”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Pr”，应为 real 类型
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\map(74): error C3203: “pair”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Ty”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C2065: “StatSetPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C2923: “std::map”: 对于参数“_Kty”，“StatSetPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C2923: “std::map”: 对于参数“_Ty”，“StatPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C3203: “less”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Pr”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(45): error C2061: 语法错误: 标识符“StatSetPtr”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(47): error C3646: “toStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(47): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(47): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(49): error C2061: 语法错误: 标识符“StatSetPtr”
+c:\users\asus\documents\github\regex\regex\graph.h(13): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\graph.h(14): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\graph.h(14): error C2535: “Graph::Graph(void)”: 已经定义或声明成员函数
+  c:\users\asus\documents\github\regex\regex\graph.h(13): note: 参见“Graph::Graph”的声明
+c:\users\asus\documents\github\regex\regex\graph.h(16): error C3646: “getStart”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\graph.h(16): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\graph.h(16): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\graph.h(17): error C3646: “getEnd”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\graph.h(17): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\graph.h(17): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\graph.h(25): error C3646: “startStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\graph.h(25): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\graph.h(26): error C3646: “endStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\graph.h(26): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\graph.h(29): error C2061: 语法错误: 标识符“StatDealer”
   LinkManager.cpp
-d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1225): error C2027: 使用了未定义类型“Graph”
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1232): note: 参见对正在编译的 类 模板 实例化 "std::aligned_union<1,_Ty>" 的引用
-          with
-          [
-              _Ty=Graph
-          ]
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1868): note: 参见对正在编译的 别名 模板 实例化 "aligned_union_t<1,Graph>" 的引用
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1914): note: 参见对正在编译的 类 模板 实例化 "std::_Ref_count_obj<_Ty>" 的引用
-          with
-          [
-              _Ty=Graph
-          ]
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(42): note: 参见对正在编译的函数 模板 实例化“std::shared_ptr<Graph> std::make_shared<Graph,StatPtr&>(StatPtr &)”的引用
-d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1226): error C2027: 使用了未定义类型“Graph”
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
-  Graph.cpp
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2061: 语法错误: 标识符“EdgePtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(20): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2061: 语法错误: 标识符“EdgePtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(24): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C3646: “nextStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C3646: “nextStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C3646: “preStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C2065: “Type”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C2923: “std::vector”: 对于参数“_Ty”，“Type”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C3203: “allocator”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Alloc”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\datatype.h(36): error C2061: 语法错误: 标识符“Stats”
+c:\users\asus\documents\github\regex\regex\datatype.h(37): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(38): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(42): error C3646: “inEdges”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(42): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(43): error C3646: “outEdges”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(43): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2065: “inEdges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2228: “.push_back”的左边必须有类/结构/联合
+  c:\users\asus\documents\github\regex\regex\datatype.h(19): note: 类型是“unknown-type”
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2065: “in”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C2065: “edges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C3312: 未找到可调用的“begin”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C3312: 未找到可调用的“end”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C2065: “edge”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2065: “outEdges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2228: “.push_back”的左边必须有类/结构/联合
+  c:\users\asus\documents\github\regex\regex\datatype.h(23): note: 类型是“unknown-type”
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2065: “out”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C2065: “edges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C3312: 未找到可调用的“begin”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C3312: 未找到可调用的“end”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C2065: “edge”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(50): error C2061: 语法错误: 标识符“Type”
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C3646: “getContent”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C3646: “getFrom”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C3646: “getTo”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(62): error C3646: “content”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(62): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(63): error C3646: “fromStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(63): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(64): error C3646: “toStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(64): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “content”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “fromStat”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “toStat”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“content”不是基或成员
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“fromStat”不是基或成员
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“toStat”不是基或成员
+c:\users\asus\documents\github\regex\regex\statset.h(14): error C2061: 语法错误: 标识符“Stats”
+c:\users\asus\documents\github\regex\regex\statset.h(14): error C2535: “StatSet::StatSet(void)”: 已经定义或声明成员函数
+  c:\users\asus\documents\github\regex\regex\statset.h(13): note: 参见“StatSet::StatSet”的声明
+c:\users\asus\documents\github\regex\regex\statset.h(16): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C3646: “nextSet”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C2923: “std::set”: 对于参数“_Kty”，“StatPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C3203: “less”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Pr”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C3203: “allocator”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Alloc”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\statset.h(21): error C2663: “std::_Tree<_Traits>::begin”: 2 个重载没有“this”指针的合法转换
+c:\users\asus\documents\github\regex\regex\statset.h(22): error C2663: “std::_Tree<_Traits>::end”: 2 个重载没有“this”指针的合法转换
+c:\users\asus\documents\github\regex\regex\statset.h(23): error C2662: “_Tree_comp_alloc<_Traits>::_Val_types::size_type std::_Tree<_Traits>::size(void) noexcept const”: 不能将“this”指针从“std::set”转换为“const std::_Tree<_Traits> &”
+  c:\users\asus\documents\github\regex\regex\statset.h(23): note: 原因如下: 无法从“std::set”转换为“const std::_Tree<_Traits>”
+  c:\users\asus\documents\github\regex\regex\statset.h(23): note: 转换要求第二个用户定义的转换运算符或构造函数
+c:\users\asus\documents\github\regex\regex\statset.h(24): error C2662: “bool std::_Tree<_Traits>::empty(void) noexcept const”: 不能将“this”指针从“std::set”转换为“const std::_Tree<_Traits> &”
+  c:\users\asus\documents\github\regex\regex\statset.h(24): note: 原因如下: 无法从“std::set”转换为“const std::_Tree<_Traits>”
+  c:\users\asus\documents\github\regex\regex\statset.h(24): note: 转换要求第二个用户定义的转换运算符或构造函数
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2061: 语法错误: 标识符“StatSetPtr”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C3646: “arr”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2143: 语法错误: 缺少“,”(在“[”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(18): error C2143: 语法错误: 缺少“;”(在“[”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(18): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(19): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(25): error C3646: “Elem”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(25): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2065: “arr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2065: “first”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(21): error C2065: “arr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(34): error C2061: 语法错误: 标识符“StatSetPtr”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(35): error C3646: “buildGraph”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(35): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(35): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(41): error C2065: “StatSetPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(41): error C2923: “std::map”: 对于参数“_Kty”，“StatSetPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(41): error C3203: “less”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Pr”，应为 real 类型
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\map(74): error C3203: “pair”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Ty”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C2065: “StatSetPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C2923: “std::map”: 对于参数“_Kty”，“StatSetPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C2923: “std::map”: 对于参数“_Ty”，“StatPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C3203: “less”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Pr”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(45): error C2061: 语法错误: 标识符“StatSetPtr”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(47): error C3646: “toStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(47): fatal error C1003: 错误计数超过 100；正在停止编译
   EpsilonNFA.cpp
-d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1225): error C2027: 使用了未定义类型“Status”
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(13): note: 参见“Status”的声明
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1232): note: 参见对正在编译的 类 模板 实例化 "std::aligned_union<1,_Ty>" 的引用
-          with
-          [
-              _Ty=Status
-          ]
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1868): note: 参见对正在编译的 别名 模板 实例化 "aligned_union_t<1,Status>" 的引用
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1914): note: 参见对正在编译的 类 模板 实例化 "std::_Ref_count_obj<_Ty>" 的引用
-          with
-          [
-              _Ty=Status
-          ]
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(32): note: 参见对正在编译的函数 模板 实例化“std::shared_ptr<Status> std::make_shared<Status,>(void)”的引用
-d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1226): error C2027: 使用了未定义类型“Status”
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(13): note: 参见“Status”的声明
-d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1225): error C2027: 使用了未定义类型“Graph”
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1232): note: 参见对正在编译的 类 模板 实例化 "std::aligned_union<1,_Ty>" 的引用
-          with
-          [
-              _Ty=Graph
-          ]
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1868): note: 参见对正在编译的 别名 模板 实例化 "aligned_union_t<1,Graph>" 的引用
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1914): note: 参见对正在编译的 类 模板 实例化 "std::_Ref_count_obj<_Ty>" 的引用
-          with
-          [
-              _Ty=Graph
-          ]
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(42): note: 参见对正在编译的函数 模板 实例化“std::shared_ptr<Graph> std::make_shared<Graph,StatPtr&>(StatPtr &)”的引用
-d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1226): error C2027: 使用了未定义类型“Graph”
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
-d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1225): error C2027: 使用了未定义类型“StatusEdge”
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(14): note: 参见“StatusEdge”的声明
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1232): note: 参见对正在编译的 类 模板 实例化 "std::aligned_union<1,_Ty>" 的引用
-          with
-          [
-              _Ty=StatusEdge
-          ]
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1868): note: 参见对正在编译的 别名 模板 实例化 "aligned_union_t<1,StatusEdge>" 的引用
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1914): note: 参见对正在编译的 类 模板 实例化 "std::_Ref_count_obj<_Ty>" 的引用
-          with
-          [
-              _Ty=StatusEdge
-          ]
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(52): note: 参见对正在编译的函数 模板 实例化“std::shared_ptr<StatusEdge> std::make_shared<StatusEdge,Type&,StatPtr&,StatPtr&>(Type &,StatPtr &,StatPtr &)”的引用
-d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1226): error C2027: 使用了未定义类型“StatusEdge”
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(14): note: 参见“StatusEdge”的声明
+c:\users\asus\documents\github\regex\regex\linkmanager.h(10): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(12): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(14): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(17): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(20): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(22): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C3646: “getLink”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2146: 语法错误: 缺少“)”(在标识符“stat1”的前面)
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C3646: “getLinkCont”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2146: 语法错误: 缺少“)”(在标识符“stat1”的前面)
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\linkmanager.h(29): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(30): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2061: 语法错误: 标识符“EdgePtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(20): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2061: 语法错误: 标识符“EdgePtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(24): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C3646: “nextStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C3646: “nextStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C3646: “preStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C2065: “Type”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C2923: “std::vector”: 对于参数“_Ty”，“Type”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C3203: “allocator”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Alloc”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\datatype.h(36): error C2061: 语法错误: 标识符“Stats”
+c:\users\asus\documents\github\regex\regex\datatype.h(37): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(38): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(42): error C3646: “inEdges”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(42): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(43): error C3646: “outEdges”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(43): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2065: “inEdges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2228: “.push_back”的左边必须有类/结构/联合
+  c:\users\asus\documents\github\regex\regex\datatype.h(19): note: 类型是“unknown-type”
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2065: “in”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C2065: “edges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C3312: 未找到可调用的“begin”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C3312: 未找到可调用的“end”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C2065: “edge”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2065: “outEdges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2228: “.push_back”的左边必须有类/结构/联合
+  c:\users\asus\documents\github\regex\regex\datatype.h(23): note: 类型是“unknown-type”
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2065: “out”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C2065: “edges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C3312: 未找到可调用的“begin”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C3312: 未找到可调用的“end”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C2065: “edge”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(50): error C2061: 语法错误: 标识符“Type”
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C3646: “getContent”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C3646: “getFrom”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C3646: “getTo”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(62): error C3646: “content”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(62): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(63): error C3646: “fromStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(63): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(64): error C3646: “toStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(64): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “content”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “fromStat”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “toStat”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“content”不是基或成员
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“fromStat”不是基或成员
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“toStat”不是基或成员
+c:\users\asus\documents\github\regex\regex\statset.h(14): error C2061: 语法错误: 标识符“Stats”
+c:\users\asus\documents\github\regex\regex\statset.h(14): error C2535: “StatSet::StatSet(void)”: 已经定义或声明成员函数
+  c:\users\asus\documents\github\regex\regex\statset.h(13): note: 参见“StatSet::StatSet”的声明
+c:\users\asus\documents\github\regex\regex\statset.h(16): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C3646: “nextSet”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C2923: “std::set”: 对于参数“_Kty”，“StatPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C3203: “less”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Pr”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C3203: “allocator”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Alloc”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\statset.h(21): error C2663: “std::_Tree<_Traits>::begin”: 2 个重载没有“this”指针的合法转换
+c:\users\asus\documents\github\regex\regex\statset.h(22): error C2663: “std::_Tree<_Traits>::end”: 2 个重载没有“this”指针的合法转换
+c:\users\asus\documents\github\regex\regex\statset.h(23): error C2662: “_Tree_comp_alloc<_Traits>::_Val_types::size_type std::_Tree<_Traits>::size(void) noexcept const”: 不能将“this”指针从“std::set”转换为“const std::_Tree<_Traits> &”
+  c:\users\asus\documents\github\regex\regex\statset.h(23): note: 原因如下: 无法从“std::set”转换为“const std::_Tree<_Traits>”
+  c:\users\asus\documents\github\regex\regex\statset.h(23): note: 转换要求第二个用户定义的转换运算符或构造函数
+c:\users\asus\documents\github\regex\regex\statset.h(24): error C2662: “bool std::_Tree<_Traits>::empty(void) noexcept const”: 不能将“this”指针从“std::set”转换为“const std::_Tree<_Traits> &”
+  c:\users\asus\documents\github\regex\regex\statset.h(24): note: 原因如下: 无法从“std::set”转换为“const std::_Tree<_Traits>”
+  c:\users\asus\documents\github\regex\regex\statset.h(24): note: 转换要求第二个用户定义的转换运算符或构造函数
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2061: 语法错误: 标识符“StatSetPtr”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C3646: “arr”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2143: 语法错误: 缺少“,”(在“[”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(18): error C2143: 语法错误: 缺少“;”(在“[”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(18): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(19): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(25): error C3646: “Elem”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(25): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2065: “arr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2065: “first”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): fatal error C1003: 错误计数超过 100；正在停止编译
   DataType.cpp
-d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1225): error C2027: 使用了未定义类型“Graph”
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1232): note: 参见对正在编译的 类 模板 实例化 "std::aligned_union<1,_Ty>" 的引用
-          with
-          [
-              _Ty=Graph
-          ]
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1868): note: 参见对正在编译的 别名 模板 实例化 "aligned_union_t<1,Graph>" 的引用
-  d:\virtual studio\vc\tools\msvc\14.12.25827\include\memory(1914): note: 参见对正在编译的 类 模板 实例化 "std::_Ref_count_obj<_Ty>" 的引用
-          with
-          [
-              _Ty=Graph
-          ]
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(42): note: 参见对正在编译的函数 模板 实例化“std::shared_ptr<Graph> std::make_shared<Graph,StatPtr&>(StatPtr &)”的引用
-d:\virtual studio\vc\tools\msvc\14.12.25827\include\type_traits(1226): error C2027: 使用了未定义类型“Graph”
-  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(15): note: 参见“Graph”的声明
-  DFAMatrix.cpp
+c:\users\asus\documents\github\regex\regex\statset.h(14): error C2061: 语法错误: 标识符“Stats”
+c:\users\asus\documents\github\regex\regex\statset.h(14): error C2535: “StatSet::StatSet(void)”: 已经定义或声明成员函数
+  c:\users\asus\documents\github\regex\regex\statset.h(13): note: 参见“StatSet::StatSet”的声明
+c:\users\asus\documents\github\regex\regex\statset.h(16): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C3646: “nextSet”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C2923: “std::set”: 对于参数“_Kty”，“StatPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C3203: “less”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Pr”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C3203: “allocator”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Alloc”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\statset.h(21): error C2663: “std::_Tree<_Traits>::begin”: 2 个重载没有“this”指针的合法转换
+c:\users\asus\documents\github\regex\regex\statset.h(22): error C2663: “std::_Tree<_Traits>::end”: 2 个重载没有“this”指针的合法转换
+c:\users\asus\documents\github\regex\regex\statset.h(23): error C2662: “_Tree_comp_alloc<_Traits>::_Val_types::size_type std::_Tree<_Traits>::size(void) noexcept const”: 不能将“this”指针从“std::set”转换为“const std::_Tree<_Traits> &”
+  c:\users\asus\documents\github\regex\regex\statset.h(23): note: 原因如下: 无法从“std::set”转换为“const std::_Tree<_Traits>”
+  c:\users\asus\documents\github\regex\regex\statset.h(23): note: 转换要求第二个用户定义的转换运算符或构造函数
+c:\users\asus\documents\github\regex\regex\statset.h(24): error C2662: “bool std::_Tree<_Traits>::empty(void) noexcept const”: 不能将“this”指针从“std::set”转换为“const std::_Tree<_Traits> &”
+  c:\users\asus\documents\github\regex\regex\statset.h(24): note: 原因如下: 无法从“std::set”转换为“const std::_Tree<_Traits>”
+  c:\users\asus\documents\github\regex\regex\statset.h(24): note: 转换要求第二个用户定义的转换运算符或构造函数
+c:\users\asus\documents\github\regex\regex\linkmanager.h(10): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(12): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(14): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(17): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(20): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(22): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C3646: “getLink”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2146: 语法错误: 缺少“)”(在标识符“stat1”的前面)
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C3646: “getLinkCont”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2146: 语法错误: 缺少“)”(在标识符“stat1”的前面)
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\linkmanager.h(29): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(30): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2061: 语法错误: 标识符“StatSetPtr”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C3646: “arr”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2143: 语法错误: 缺少“,”(在“[”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(18): error C2143: 语法错误: 缺少“;”(在“[”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(18): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(19): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(25): error C3646: “Elem”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(25): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2065: “arr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2065: “first”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(21): error C2065: “arr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(34): error C2061: 语法错误: 标识符“StatSetPtr”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(35): error C3646: “buildGraph”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(35): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(35): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(41): error C2065: “StatSetPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(41): error C2923: “std::map”: 对于参数“_Kty”，“StatSetPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(41): error C3203: “less”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Pr”，应为 real 类型
+d:\virtual studio\vc\tools\msvc\14.12.25827\include\map(74): error C3203: “pair”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Ty”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C2065: “StatSetPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C2923: “std::map”: 对于参数“_Kty”，“StatSetPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C2923: “std::map”: 对于参数“_Ty”，“StatPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(42): error C3203: “less”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Pr”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(45): error C2061: 语法错误: 标识符“StatSetPtr”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(47): error C3646: “toStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(47): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(47): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(49): error C2061: 语法错误: 标识符“StatSetPtr”
+c:\users\asus\documents\github\regex\regex\graph.h(13): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\graph.h(14): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\graph.h(14): error C2535: “Graph::Graph(void)”: 已经定义或声明成员函数
+  c:\users\asus\documents\github\regex\regex\graph.h(13): note: 参见“Graph::Graph”的声明
+c:\users\asus\documents\github\regex\regex\graph.h(16): error C3646: “getStart”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\graph.h(16): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\graph.h(16): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\graph.h(17): error C3646: “getEnd”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\graph.h(17): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\graph.h(17): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\graph.h(25): error C3646: “startStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\graph.h(25): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\graph.h(26): error C3646: “endStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\graph.h(26): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\graph.h(29): error C2061: 语法错误: 标识符“StatDealer”
+c:\users\asus\documents\github\regex\regex\datatype.cpp(8): error C2660: “LinkManager::deleteLinks”: 函数不接受 2 个参数
+c:\users\asus\documents\github\regex\regex\datatype.cpp(9): error C2660: “LinkManager::deleteLinks”: 函数不接受 2 个参数
   正在生成代码...
-c:\users\asus\documents\github\regex\regex\dfamatrix.cpp(52): warning C4715: “DFAMatrix::toStat”: 不是所有的控件路径都返回值
+  正在编译...
+  DFAMatrix.cpp
+c:\users\asus\documents\github\regex\regex\linkmanager.h(10): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(12): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(14): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(17): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(20): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(22): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C3646: “getLink”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2146: 语法错误: 缺少“)”(在标识符“stat1”的前面)
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C3646: “getLinkCont”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2146: 语法错误: 缺少“)”(在标识符“stat1”的前面)
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\linkmanager.h(29): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(30): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2061: 语法错误: 标识符“EdgePtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(20): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2061: 语法错误: 标识符“EdgePtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(24): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C3646: “nextStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C3646: “nextStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C3646: “preStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C2065: “Type”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C2923: “std::vector”: 对于参数“_Ty”，“Type”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C3203: “allocator”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Alloc”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\datatype.h(36): error C2061: 语法错误: 标识符“Stats”
+c:\users\asus\documents\github\regex\regex\datatype.h(37): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(38): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(42): error C3646: “inEdges”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(42): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(43): error C3646: “outEdges”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(43): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2065: “inEdges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2228: “.push_back”的左边必须有类/结构/联合
+  c:\users\asus\documents\github\regex\regex\datatype.h(19): note: 类型是“unknown-type”
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2065: “in”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C2065: “edges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C3312: 未找到可调用的“begin”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C3312: 未找到可调用的“end”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C2065: “edge”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2065: “outEdges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2228: “.push_back”的左边必须有类/结构/联合
+  c:\users\asus\documents\github\regex\regex\datatype.h(23): note: 类型是“unknown-type”
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2065: “out”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C2065: “edges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C3312: 未找到可调用的“begin”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C3312: 未找到可调用的“end”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C2065: “edge”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(50): error C2061: 语法错误: 标识符“Type”
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C3646: “getContent”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C3646: “getFrom”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C3646: “getTo”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(62): error C3646: “content”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(62): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(63): error C3646: “fromStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(63): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(64): error C3646: “toStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(64): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “content”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “fromStat”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “toStat”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“content”不是基或成员
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“fromStat”不是基或成员
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“toStat”不是基或成员
+c:\users\asus\documents\github\regex\regex\statset.h(14): error C2061: 语法错误: 标识符“Stats”
+c:\users\asus\documents\github\regex\regex\statset.h(14): error C2535: “StatSet::StatSet(void)”: 已经定义或声明成员函数
+  c:\users\asus\documents\github\regex\regex\statset.h(13): note: 参见“StatSet::StatSet”的声明
+c:\users\asus\documents\github\regex\regex\statset.h(16): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C3646: “nextSet”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C2923: “std::set”: 对于参数“_Kty”，“StatPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C3203: “less”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Pr”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C3203: “allocator”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Alloc”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\statset.h(21): error C2663: “std::_Tree<_Traits>::begin”: 2 个重载没有“this”指针的合法转换
+c:\users\asus\documents\github\regex\regex\statset.h(22): error C2663: “std::_Tree<_Traits>::end”: 2 个重载没有“this”指针的合法转换
+c:\users\asus\documents\github\regex\regex\statset.h(23): error C2662: “_Tree_comp_alloc<_Traits>::_Val_types::size_type std::_Tree<_Traits>::size(void) noexcept const”: 不能将“this”指针从“std::set”转换为“const std::_Tree<_Traits> &”
+  c:\users\asus\documents\github\regex\regex\statset.h(23): note: 原因如下: 无法从“std::set”转换为“const std::_Tree<_Traits>”
+  c:\users\asus\documents\github\regex\regex\statset.h(23): note: 转换要求第二个用户定义的转换运算符或构造函数
+c:\users\asus\documents\github\regex\regex\statset.h(24): error C2662: “bool std::_Tree<_Traits>::empty(void) noexcept const”: 不能将“this”指针从“std::set”转换为“const std::_Tree<_Traits> &”
+  c:\users\asus\documents\github\regex\regex\statset.h(24): note: 原因如下: 无法从“std::set”转换为“const std::_Tree<_Traits>”
+  c:\users\asus\documents\github\regex\regex\statset.h(24): note: 转换要求第二个用户定义的转换运算符或构造函数
+c:\users\asus\documents\github\regex\regex\graph.h(13): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\graph.h(14): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\graph.h(14): error C2535: “Graph::Graph(void)”: 已经定义或声明成员函数
+  c:\users\asus\documents\github\regex\regex\graph.h(13): note: 参见“Graph::Graph”的声明
+c:\users\asus\documents\github\regex\regex\graph.h(16): error C3646: “getStart”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\graph.h(16): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\graph.h(16): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\graph.h(17): error C3646: “getEnd”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\graph.h(17): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\graph.h(17): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\graph.h(25): error C3646: “startStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\graph.h(25): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\graph.h(26): error C3646: “endStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\graph.h(26): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\graph.h(29): error C2061: 语法错误: 标识符“StatDealer”
+c:\users\asus\documents\github\regex\regex\dfamatrix.cpp(25): error C2660: “LinkManager::link”: 函数不接受 3 个参数
+c:\users\asus\documents\github\regex\regex\dfamatrix.cpp(25): fatal error C1003: 错误计数超过 100；正在停止编译
+  正在生成代码...
+  正在编译...
+  Graph.cpp
+c:\users\asus\documents\github\regex\regex\linkmanager.h(10): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(12): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(14): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(17): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(20): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(22): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C3646: “getLink”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2146: 语法错误: 缺少“)”(在标识符“stat1”的前面)
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C3646: “getLinkCont”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2146: 语法错误: 缺少“)”(在标识符“stat1”的前面)
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\linkmanager.h(29): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(30): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2061: 语法错误: 标识符“EdgePtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(20): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2061: 语法错误: 标识符“EdgePtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(24): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C3646: “nextStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C3646: “nextStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C3646: “preStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C2065: “Type”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C2923: “std::vector”: 对于参数“_Ty”，“Type”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C3203: “allocator”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Alloc”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\datatype.h(36): error C2061: 语法错误: 标识符“Stats”
+c:\users\asus\documents\github\regex\regex\datatype.h(37): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(38): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(42): error C3646: “inEdges”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(42): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(43): error C3646: “outEdges”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(43): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2065: “inEdges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2228: “.push_back”的左边必须有类/结构/联合
+  c:\users\asus\documents\github\regex\regex\datatype.h(19): note: 类型是“unknown-type”
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2065: “in”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C2065: “edges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C3312: 未找到可调用的“begin”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C3312: 未找到可调用的“end”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C2065: “edge”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2065: “outEdges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2228: “.push_back”的左边必须有类/结构/联合
+  c:\users\asus\documents\github\regex\regex\datatype.h(23): note: 类型是“unknown-type”
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2065: “out”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C2065: “edges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C3312: 未找到可调用的“begin”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C3312: 未找到可调用的“end”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C2065: “edge”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(50): error C2061: 语法错误: 标识符“Type”
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C3646: “getContent”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C3646: “getFrom”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C3646: “getTo”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(62): error C3646: “content”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(62): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(63): error C3646: “fromStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(63): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(64): error C3646: “toStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(64): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “content”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “fromStat”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “toStat”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“content”不是基或成员
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“fromStat”不是基或成员
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“toStat”不是基或成员
+c:\users\asus\documents\github\regex\regex\statset.h(14): error C2061: 语法错误: 标识符“Stats”
+c:\users\asus\documents\github\regex\regex\statset.h(14): error C2535: “StatSet::StatSet(void)”: 已经定义或声明成员函数
+  c:\users\asus\documents\github\regex\regex\statset.h(13): note: 参见“StatSet::StatSet”的声明
+c:\users\asus\documents\github\regex\regex\statset.h(16): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C3646: “nextSet”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C2923: “std::set”: 对于参数“_Kty”，“StatPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C3203: “less”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Pr”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C3203: “allocator”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Alloc”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\statset.h(21): error C2663: “std::_Tree<_Traits>::begin”: 2 个重载没有“this”指针的合法转换
+c:\users\asus\documents\github\regex\regex\statset.h(22): error C2663: “std::_Tree<_Traits>::end”: 2 个重载没有“this”指针的合法转换
+c:\users\asus\documents\github\regex\regex\statset.h(23): error C2662: “_Tree_comp_alloc<_Traits>::_Val_types::size_type std::_Tree<_Traits>::size(void) noexcept const”: 不能将“this”指针从“std::set”转换为“const std::_Tree<_Traits> &”
+  c:\users\asus\documents\github\regex\regex\statset.h(23): note: 原因如下: 无法从“std::set”转换为“const std::_Tree<_Traits>”
+  c:\users\asus\documents\github\regex\regex\statset.h(23): note: 转换要求第二个用户定义的转换运算符或构造函数
+c:\users\asus\documents\github\regex\regex\statset.h(24): error C2662: “bool std::_Tree<_Traits>::empty(void) noexcept const”: 不能将“this”指针从“std::set”转换为“const std::_Tree<_Traits> &”
+  c:\users\asus\documents\github\regex\regex\statset.h(24): note: 原因如下: 无法从“std::set”转换为“const std::_Tree<_Traits>”
+  c:\users\asus\documents\github\regex\regex\statset.h(24): note: 转换要求第二个用户定义的转换运算符或构造函数
+c:\users\asus\documents\github\regex\regex\graph.cpp(31): error C2039: “nextStats”: 不是“Status”的成员
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(16): note: 参见“Status”的声明
+c:\users\asus\documents\github\regex\regex\graph.cpp(31): error C2039: “__this”: 不是“Status”的成员
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(16): note: 参见“Status”的声明
+c:\users\asus\documents\github\regex\regex\graph.cpp(33): error C2039: “getLinkCont”: 不是“LinkManager”的成员
+  c:\users\asus\documents\github\regex\regex\linkmanager.h(7): note: 参见“LinkManager”的声明
+c:\users\asus\documents\github\regex\regex\graph.cpp(33): error C3861: “getLinkCont”: 找不到标识符
+c:\users\asus\documents\github\regex\regex\graph.cpp(34): error C2660: “LinkManager::skipStat”: 函数不接受 2 个参数
+c:\users\asus\documents\github\regex\regex\graph.cpp(55): error C2039: “nextStats”: 不是“Status”的成员
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(16): note: 参见“Status”的声明
+c:\users\asus\documents\github\regex\regex\graph.cpp(79): error C2039: “nextStats”: 不是“Status”的成员
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(16): note: 参见“Status”的声明
+c:\users\asus\documents\github\regex\regex\graph.cpp(95): error C2039: “getInEdges”: 不是“Status”的成员
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(16): note: 参见“Status”的声明
+c:\users\asus\documents\github\regex\regex\graph.cpp(95): error C2039: “__this”: 不是“Status”的成员
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(16): note: 参见“Status”的声明
+c:\users\asus\documents\github\regex\regex\graph.cpp(99): error C2039: “getContent”: 不是“StatusEdge”的成员
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(17): note: 参见“StatusEdge”的声明
+c:\users\asus\documents\github\regex\regex\graph.cpp(99): error C2039: “__this”: 不是“StatusEdge”的成员
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(17): note: 参见“StatusEdge”的声明
+c:\users\asus\documents\github\regex\regex\graph.cpp(116): error C2660: “LinkManager::eraseStat”: 函数不接受 1 个参数
+c:\users\asus\documents\github\regex\regex\graph.cpp(141): error C2039: “getOutEdges”: 不是“Status”的成员
+  c:\users\asus\documents\github\regex\regex\epsilonnfa.h(16): note: 参见“Status”的声明
+c:\users\asus\documents\github\regex\regex\graph.cpp(141): fatal error C1003: 错误计数超过 100；正在停止编译
+  正在生成代码...
+  正在编译...
+  GraphManager.cpp
+c:\users\asus\documents\github\regex\regex\linkmanager.h(10): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(12): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(14): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(17): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(20): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(22): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C3646: “getLink”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2146: 语法错误: 缺少“)”(在标识符“stat1”的前面)
+c:\users\asus\documents\github\regex\regex\linkmanager.h(24): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C3646: “getLinkCont”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2146: 语法错误: 缺少“)”(在标识符“stat1”的前面)
+c:\users\asus\documents\github\regex\regex\linkmanager.h(25): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\linkmanager.h(29): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\linkmanager.h(30): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2061: 语法错误: 标识符“EdgePtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(20): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2061: 语法错误: 标识符“EdgePtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(24): error C2061: 语法错误: 标识符“Edges”
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(27): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(28): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C3646: “nextStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(30): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C3646: “nextStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(31): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C3646: “preStats”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(33): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C2065: “Type”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C2923: “std::vector”: 对于参数“_Ty”，“Type”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\datatype.h(35): error C3203: “allocator”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Alloc”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\datatype.h(36): error C2061: 语法错误: 标识符“Stats”
+c:\users\asus\documents\github\regex\regex\datatype.h(37): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(38): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\datatype.h(42): error C3646: “inEdges”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(42): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(43): error C3646: “outEdges”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(43): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2065: “inEdges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2228: “.push_back”的左边必须有类/结构/联合
+  c:\users\asus\documents\github\regex\regex\datatype.h(19): note: 类型是“unknown-type”
+c:\users\asus\documents\github\regex\regex\datatype.h(19): error C2065: “in”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C2065: “edges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C3312: 未找到可调用的“begin”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C3312: 未找到可调用的“end”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(21): error C2065: “edge”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2065: “outEdges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2228: “.push_back”的左边必须有类/结构/联合
+  c:\users\asus\documents\github\regex\regex\datatype.h(23): note: 类型是“unknown-type”
+c:\users\asus\documents\github\regex\regex\datatype.h(23): error C2065: “out”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C2065: “edges”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C3312: 未找到可调用的“begin”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C3312: 未找到可调用的“end”函数(针对类型“unknown-type”)
+c:\users\asus\documents\github\regex\regex\datatype.h(25): error C2065: “edge”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(50): error C2061: 语法错误: 标识符“Type”
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C3646: “getContent”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(56): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C3646: “getFrom”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(57): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C3646: “getTo”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\datatype.h(58): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\datatype.h(62): error C3646: “content”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(62): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(63): error C3646: “fromStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(63): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(64): error C3646: “toStat”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\datatype.h(64): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “content”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “fromStat”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2065: “toStat”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“content”不是基或成员
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“fromStat”不是基或成员
+c:\users\asus\documents\github\regex\regex\datatype.h(51): error C2614: “StatusEdge”: 非法的成员初始化:“toStat”不是基或成员
+c:\users\asus\documents\github\regex\regex\statset.h(14): error C2061: 语法错误: 标识符“Stats”
+c:\users\asus\documents\github\regex\regex\statset.h(14): error C2535: “StatSet::StatSet(void)”: 已经定义或声明成员函数
+  c:\users\asus\documents\github\regex\regex\statset.h(13): note: 参见“StatSet::StatSet”的声明
+c:\users\asus\documents\github\regex\regex\statset.h(16): error C2061: 语法错误: 标识符“StatPtr”
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C3646: “nextSet”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C2059: 语法错误:“(”
+c:\users\asus\documents\github\regex\regex\statset.h(20): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C2065: “StatPtr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C2923: “std::set”: 对于参数“_Kty”，“StatPtr”不是有效的 模板 类型变量
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C3203: “less”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Pr”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\statset.h(29): error C3203: “allocator”: 未专用化的 类 模板 不能用作 模板 变量，该变量属于 模板 参数“_Alloc”，应为 real 类型
+c:\users\asus\documents\github\regex\regex\statset.h(21): error C2663: “std::_Tree<_Traits>::begin”: 2 个重载没有“this”指针的合法转换
+c:\users\asus\documents\github\regex\regex\statset.h(22): error C2663: “std::_Tree<_Traits>::end”: 2 个重载没有“this”指针的合法转换
+c:\users\asus\documents\github\regex\regex\statset.h(23): error C2662: “_Tree_comp_alloc<_Traits>::_Val_types::size_type std::_Tree<_Traits>::size(void) noexcept const”: 不能将“this”指针从“std::set”转换为“const std::_Tree<_Traits> &”
+  c:\users\asus\documents\github\regex\regex\statset.h(23): note: 原因如下: 无法从“std::set”转换为“const std::_Tree<_Traits>”
+  c:\users\asus\documents\github\regex\regex\statset.h(23): note: 转换要求第二个用户定义的转换运算符或构造函数
+c:\users\asus\documents\github\regex\regex\statset.h(24): error C2662: “bool std::_Tree<_Traits>::empty(void) noexcept const”: 不能将“this”指针从“std::set”转换为“const std::_Tree<_Traits> &”
+  c:\users\asus\documents\github\regex\regex\statset.h(24): note: 原因如下: 无法从“std::set”转换为“const std::_Tree<_Traits>”
+  c:\users\asus\documents\github\regex\regex\statset.h(24): note: 转换要求第二个用户定义的转换运算符或构造函数
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2061: 语法错误: 标识符“StatSetPtr”
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C3646: “arr”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2143: 语法错误: 缺少“,”(在“[”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(17): error C2238: 意外的标记位于“;”之前
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(18): error C2143: 语法错误: 缺少“;”(在“[”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(18): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(19): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(25): error C3646: “Elem”: 未知重写说明符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(25): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(26): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(27): error C2334: “{”的前面有意外标记；跳过明显的函数体
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2065: “arr”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): error C2065: “first”: 未声明的标识符
+c:\users\asus\documents\github\regex\regex\dfamatrix.h(16): fatal error C1003: 错误计数超过 100；正在停止编译
+  正在生成代码...

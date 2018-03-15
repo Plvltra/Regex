@@ -2,6 +2,8 @@
 
 #include "Graph.h"
 #include "DataType.h"
+#include "StatSet.h"
+
 using namespace std;
 
 // Graph¿‡

@@ -6,6 +6,9 @@
 #include <exception>
 
 #include "Debug.h"
+#include "StatSet.h"
+#include "Graph.h"
+#include "DataType.h"
 
 typedef char Type;
 const Type epsilon = '*';
@@ -27,27 +30,27 @@ typedef std::queue<StatPtr> StatQue;
 
 typedef void StatDealer(StatPtr);
 
-StatPtr makeStatPtr()
+inline StatPtr makeStatPtr()
 {
 	return std::make_shared<Status>();
 }
 
-StatPtr makeStatPtr(bool isEnd, int ID)
+inline StatPtr makeStatPtr(bool isEnd, int ID)
 {
 	return std::make_shared<Status>(isEnd, ID);
 }
 
-GraphPtr makeGraphPtr(StatPtr start)
+inline GraphPtr makeGraphPtr(StatPtr start)
 {
 	return std::make_shared<Graph>(start);
 }
 
-GraphPtr makeGraphPtr(StatPtr start, StatPtr end)
+inline GraphPtr makeGraphPtr(StatPtr start, StatPtr end)
 {
 	return std::make_shared<Graph>(start, end);
 }
 
-EdgePtr makeEdgePtr(Type content, StatPtr fromStat, StatPtr toStat)
+inline EdgePtr makeEdgePtr(Type content, StatPtr fromStat, StatPtr toStat)
 {
 	return std::make_shared<StatusEdge>(content, fromStat, toStat);
 }

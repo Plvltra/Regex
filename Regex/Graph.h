@@ -4,6 +4,7 @@
 #include "DataType.h"
 #include "StatSet.h"
 #include "DFAMatrix.h"
+#include "Graph.h"
 
 class Graph
 {

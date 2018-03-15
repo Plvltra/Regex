@@ -7,13 +7,15 @@
 #include "StatSet.h"
 #include "Graph.h"
 #include "LinkManager.h"
+#include "DataType.h"
+
 
 const int SIZE = 128;
 // StatSetPtr Array
 struct Row
 {
-	explicit Row(StatSetPtr first) { arr[0] = first; }
 	StatSetPtr arr[SIZE];
+	explicit Row(StatSetPtr first) { arr[0] = first; }
 	StatSetPtr operator[] (int i)
 	{
 		if (i >= 0 && i < SIZE)
