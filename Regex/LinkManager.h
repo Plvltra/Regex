@@ -1,7 +1,6 @@
 #pragma once
 
 #include "EpsilonNFA.h"
-#include "DataType.h"
 
 class LinkManager
 {
