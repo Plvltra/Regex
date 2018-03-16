@@ -1,6 +1,5 @@
 
 #include "LinkManager.h"
-#include "DataType.h"
 
 using namespace std;
 
@@ -55,7 +54,6 @@ void LinkManager::eraseStat(StatPtr stat)
 		skipStat(preStat, stat);
 	}
 	deleteLinks(stat, stat->nextStats()); // É¾È¥³öµÄ±ß
-	stat.reset();
 	level--;
 }
 

@@ -1,9 +1,5 @@
 
 #include "GraphManager.h"
-#include "LinkManager.h"
-#include "Graph.h"
-#include "DataType.h"
-#include "StatSet.h"
 
 using namespace std;
 

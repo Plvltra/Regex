@@ -1,6 +1,9 @@
 #pragma once
 
 #include "EpsilonNFA.h"
+#include "DataType.h"
+#include "LinkManager.h"
+#include "Graph.h"
 
 class GraphManager
 {

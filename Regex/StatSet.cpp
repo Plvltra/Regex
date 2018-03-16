@@ -1,6 +1,5 @@
 
 #include "StatSet.h"
-#include "DataType.h"
 
 using namespace std;
 
@@ -37,21 +36,4 @@ StatSetPtr StatSet::nextSet(Type linkCont)
 		return NULL;
 	else
 		return nextSet;
-}
-
-auto StatSet::begin()
-{
-	return elems.begin();
-}
-auto StatSet::end()
-{
-	return elems.end();
-}
-bool StatSet::size()
-{
-	return elems.size();
-}
-bool StatSet::empty()
-{
-	return elems.empty();
 }

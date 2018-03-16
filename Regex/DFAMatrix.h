@@ -4,18 +4,28 @@
 #include <map>
 
 #include "EpsilonNFA.h"
+#include "StatSet.h"
+#include "Graph.h"
+#include "LinkManager.h"
+#include "DataType.h"
+
 
 const int SIZE = 128;
 // StatSetPtr Array
-typedef StatSetPtr Elem;
 struct Row
 {
 	StatSetPtr arr[SIZE];
-	// Functions
-	explicit Row(StatSetPtr first);
-	StatSetPtr operator[] (int i);
-	Elem* begin();
-	Elem* end();
+	explicit Row(StatSetPtr first) { arr[0] = first; }
+	StatSetPtr operator[] (int i)
+	{
+		if (i >= 0 && i < SIZE)
+			return arr[i];
+		else
+			throw std::exception("对行索引非法");
+	}
+	typedef StatSetPtr Elem;
+	Elem* begin() { return arr; }
+	Elem* end() { return arr + SIZE; }
 };
 
 // DFAMatrix

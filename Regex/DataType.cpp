@@ -1,9 +1,14 @@
 #include "DataType.h"
-#include "LinkManager.h"
 
 using namespace std;
 
 // StatusÀà
+Status::~Status()
+{
+	LinkManager::deleteLinks(StatPtr(this), this->nextStats());
+	LinkManager::deleteLinks(StatPtr(this), this->preStats());
+}
+
 Stats Status::nextStats()
 {
 	Stats nextStats;
@@ -44,7 +49,8 @@ bool Status::inStats(Stats stats)
 {
 	for (auto stat : stats)
 	{
-		if (shared_from_this() == stat)
+		StatPtr thisStat(this);
+		if (thisStat == stat)
 			return true;
 	}
 	return false;
@@ -53,7 +59,7 @@ bool Status::inStats(Stats stats)
 bool Status::next(StatPtr stat)
 {
 	if (stat)
-		return stat->previous(shared_from_this());
+		return stat->previous(StatPtr(this));
 	else
 		return false;
 }
@@ -68,67 +74,3 @@ bool Status::previous(StatPtr stat)
 	return false;
 }
 
-
-Status::Status()
-	:isEnd(false), ID(0), checked(false), valid(false)
-{
-}
-Status::Status(bool isEnd, int ID)
-	: isEnd(isEnd), ID(ID), checked(false), valid(false)
-{
-}
-
-void Status::setEnd(bool isEnd)
-{
-	this->isEnd = isEnd;
-}
-bool Status::getEnd()
-{
-	return this->isEnd;
-}
-void Status::addInEdge(EdgePtr in)
-{
-	inEdges.push_back(in);
-}
-void Status::addInEdges(Edges& edges)
-{
-	for (auto edge : edges) addInEdge(edge);
-}
-void Status::addOutEdge(EdgePtr out)
-{
-	outEdges.push_back(out);
-}
-void Status::addOutEdges(Edges& edges)
-{
-	for (auto edge : edges) addOutEdge(edge);
-}
-Edges& Status::getInEdges()
-{
-	return inEdges;
-}
-Edges& Status::getOutEdges()
-{
-	return outEdges;
-}
-
-// StatusEdge
-StatusEdge::StatusEdge(Type content, StatPtr fromStat, StatPtr toStat)
-	:content(content), fromStat(fromStat), toStat(toStat)
-{
-}
-StatusEdge::~StatusEdge()
-{
-}
-
-Type StatusEdge::getContent()
-{
-	return content;
-}
-StatPtr StatusEdge::getFrom()
-{
-	return fromStat;
-}
-StatPtr StatusEdge::getTo()
-{
-	return toStat;
-}

@@ -1,6 +1,10 @@
 #pragma once
 
 #include "EpsilonNFA.h"
+#include "DataType.h"
+#include "StatSet.h"
+#include "DFAMatrix.h"
+#include "Graph.h"
 
 class Graph
 {
@@ -9,8 +13,8 @@ public:
 	Graph(StatPtr start);
 	Graph(StatPtr startStat, StatPtr endStat);
 	// Functions
-	StatPtr getStart();
-	StatPtr getEnd();
+	StatPtr getStart() { return startStat; }
+	StatPtr getEnd() { return endStat; }
 	void toNFA(); // epsNFA ->NFA
 	void toDFA(); // NFA -> DFA
 	void printGraph();
