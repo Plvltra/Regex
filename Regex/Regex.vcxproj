@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Arithmetic.cpp" />
+    <ClCompile Include="DFAGraph.cpp" />
     <ClCompile Include="DFAMatrix.cpp" />
     <ClCompile Include="EpsilonNFA.cpp" />
     <ClCompile Include="Graph.cpp" />
@@ -161,6 +162,7 @@
   <ItemGroup>
     <ClInclude Include="Arithmetic.h" />
     <ClInclude Include="Debug.h" />
+    <ClInclude Include="DFAGraph.h" />
     <ClInclude Include="DFAMatrix.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="GraphManager.h" />

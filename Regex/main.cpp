@@ -35,16 +35,17 @@ int main()
 		Graphes graphes = { g1, g2, g3 };
 		GraphPtr g4 = GraphManager::bingLink(graphes);
 
-		StatPtr s4 = makeStatPtr();
-		StatPtr e4 = makeStatPtr();
-		LinkManager::link(s4, e4, 'd');
-		GraphPtr g5 = makeGraphPtr(s4, e4);
-
-		GraphPtr g6 = GraphManager::chuanLink(g4, g5);
+		//StatPtr s4 = makeStatPtr();
+		//StatPtr e4 = makeStatPtr();
+		//LinkManager::link(s4, e4, 'd');
+		//GraphPtr g5 = makeGraphPtr(s4, e4);
+		//GraphPtr g6 = GraphManager::chuanLink(g4, g5);
 		//GraphPtr g6 = GraphManager::repeatLink(g4);
-		g6->printGraph();
-		g6->toNFA();
-		g6->printGraph();
+		g4->printGraph();
+		g4->toNFA();
+		g4->printGraph();
+
+		g4->printGraph();
 
 		//using Arithmetic::test;
 		//test();

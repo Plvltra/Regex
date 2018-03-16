@@ -4,20 +4,21 @@
 
 using namespace std;
 
+StatSet::StatSet(StatPtr stat)
+{
+	this->isEnd = stat->getEnd();
+	insert(stat);
+}
+
 StatSet::StatSet(Stats& stats)
 {
 	this->isEnd = false;
 	for (auto stat : stats)
 	{
-		elems.insert(stat);
+		insert(stat);
 		if (stat->getEnd())
 			this->isEnd = true;
 	}
-}
-
-inline void StatSet::insert(StatPtr stat)
-{
-	elems.insert(stat);
 }
 
 bool StatSet::operator== (const StatSet& other) const
@@ -39,6 +40,12 @@ StatSetPtr StatSet::nextSet(Type linkCont)
 		return nextSet;
 }
 
+inline void StatSet::insert(StatPtr stat)
+{
+	elems.insert(stat);
+	if (stat->getEnd())
+		this->isEnd = true;
+}
 auto StatSet::begin()
 {
 	return elems.begin();

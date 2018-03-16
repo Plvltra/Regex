@@ -14,10 +14,13 @@ class Status;
 class StatusEdge;
 class Graph;
 class StatSet;
+class DFAGraph;
+
 typedef std::shared_ptr<StatSet> StatSetPtr;
 typedef std::shared_ptr<Status> StatPtr;
 typedef std::shared_ptr<StatusEdge> EdgePtr;
 typedef std::shared_ptr<Graph> GraphPtr;
+typedef std::shared_ptr<DFAGraph> DFAGraphPtr;
 
 typedef std::vector<EdgePtr> Edges;
 typedef std::vector<StatPtr> Stats;
@@ -29,6 +32,7 @@ typedef void StatDealer(StatPtr);
 
 StatPtr makeStatPtr();
 StatPtr makeStatPtr(bool isEnd, int ID);
-GraphPtr makeGraphPtr(StatPtr start);
+DFAGraphPtr makeDFAGraphPtr(GraphPtr graph);
 GraphPtr makeGraphPtr(StatPtr start, StatPtr end);
 EdgePtr makeEdgePtr(Type content, StatPtr fromStat, StatPtr toStat);
+StatSetPtr makeStatSetPtr(StatPtr stat);

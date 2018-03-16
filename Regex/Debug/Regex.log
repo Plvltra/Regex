@@ -1,11 +1,16 @@
-﻿  main.cpp
+﻿  EpsilonNFA.cpp
   正在生成代码...
-  正在跳过...(未检测到相关更改)
+  正在编译...
+  main.cpp
   StatSet.cpp
   LinkManager.cpp
   GraphManager.cpp
   Graph.cpp
-  EpsilonNFA.cpp
   DataType.cpp
   DFAMatrix.cpp
-  Regex.vcxproj -> C:\Users\asus\Documents\GitHub\Regex\Regex\Debug\Regex.exe
+  DFAGraph.cpp
+  正在生成代码...
+c:\users\asus\documents\github\regex\regex\dfamatrix.cpp(83): warning C4715: “DFAMatrix::toStat”: 不是所有的控件路径都返回值
+c:\users\asus\documents\github\regex\regex\linkmanager.cpp(83): warning C4715: “LinkManager::getLink”: 不是所有的控件路径都返回值
+main.obj : error LNK2019: 无法解析的外部符号 "public: static class std::shared_ptr<class Graph> __cdecl GraphManager::NFAtoDFA(class std::shared_ptr<class Graph>)" (?NFAtoDFA@GraphManager@@SA?AV?$shared_ptr@VGraph@@@std@@V23@@Z)，该符号在函数 _main 中被引用
+C:\Users\asus\Documents\GitHub\Regex\Regex\Debug\Regex.exe : fatal error LNK1120: 1 个无法解析的外部命令

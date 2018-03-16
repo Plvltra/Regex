@@ -10,6 +10,7 @@ class StatSet
 public:
 	// Constructors
 	StatSet() = default;
+	StatSet(StatPtr stat);
 	StatSet(Stats& stats);
 	// Functions
 	void insert(StatPtr stat);

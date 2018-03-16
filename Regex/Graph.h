@@ -6,13 +6,11 @@ class Graph
 {
 public:
 	// Constructors & Destructors
-	Graph(StatPtr start);
 	Graph(StatPtr startStat, StatPtr endStat);
 	// Functions
 	StatPtr getStart();
 	StatPtr getEnd();
 	void toNFA(); // epsNFA ->NFA
-	void toDFA(); // NFA -> DFA
 	void printGraph();
 	// 内部定义类型
 

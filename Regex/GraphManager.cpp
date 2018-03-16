@@ -4,6 +4,7 @@
 #include "Graph.h"
 #include "DataType.h"
 #include "StatSet.h"
+#include "DFAMatrix.h"
 
 using namespace std;
 

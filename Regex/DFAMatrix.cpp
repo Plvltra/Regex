@@ -13,7 +13,7 @@ Row::Row(StatSetPtr first)
 	arr[0] = first;
 }
 
-StatSetPtr Row::operator[] (int i)
+StatSetPtr& Row::operator[] (int i)
 {
 	if (i >= 0 && i < SIZE)
 		return arr[i];
@@ -32,14 +32,18 @@ Elem* Row::end()
 }
 
 // DFAMatrix 
-DFAMatrix::DFAMatrix(StatSetPtr start)
+DFAMatrix::DFAMatrix(GraphPtr NFAGraph)
 {
-	insertRow(start);
+	StatPtr NFAstart = NFAGraph->getStart();
+	if(!NFAstart)
+		throw exception("矩阵赋值g为空");
+
+	StatSetPtr stats = make_shared<StatSet>(NFAstart);
+	insertRow(stats);
 	extend();
-	// println("矩阵赋值g为空");
 }
 
-GraphPtr DFAMatrix::buildGraph()
+StatPtr DFAMatrix::buildDFAGraph()
 {
 	for (int i = 0; i < MAX_ROW; i++)
 	{
@@ -52,7 +56,7 @@ GraphPtr DFAMatrix::buildGraph()
 		}
 	}
 	StatPtr start = toStat(matrix[0][0]);
-	return makeGraphPtr(start);
+	return start;
 }
 
 void DFAMatrix::extend()
@@ -80,13 +84,12 @@ StatPtr DFAMatrix::toStat(StatSetPtr set)
 
 void DFAMatrix::rowExtend(int rowIndex)
 {
-	Row& row = matrix[rowIndex];
-	StatSetPtr src = row[0]; // 第一列
+	StatSetPtr src = matrix[rowIndex][0]; // 第一列
 	for (int i = 1; i < SIZE; i++)
 	{
 		Type content = i;
 		StatSetPtr extend = src->nextSet(content);
-		row[i] = extend;
+		matrix[rowIndex][i] = extend;
 		// 若存在添加进map及新行中
 		if (extend)
 		{

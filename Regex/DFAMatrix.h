@@ -8,12 +8,13 @@
 const int SIZE = 128;
 // StatSetPtr Array
 typedef StatSetPtr Elem;
+
 struct Row
 {
 	StatSetPtr arr[SIZE];
 	// Functions
 	explicit Row(StatSetPtr first);
-	StatSetPtr operator[] (int i);
+	StatSetPtr& operator[] (int i); // 返回lvalue
 	Elem* begin();
 	Elem* end();
 };
@@ -22,8 +23,9 @@ struct Row
 class DFAMatrix
 {
 public:
-	DFAMatrix(StatSetPtr start);
-	GraphPtr buildGraph();
+	DFAMatrix(GraphPtr NFAGraph);
+	// 返回图的起点
+	StatPtr buildDFAGraph();
 private:
 	// Attributes
 	int MAX_ID = 0; // ID -> [1,MAX_ID]
@@ -32,10 +34,9 @@ private:
 	std::map<StatSetPtr, int> IDMap;
 	std::map<StatSetPtr, StatPtr> statMap;
 	// Functions
-	void extend();
-	int toID(StatSetPtr set);
-	// 返回状态集映射的状态
-	StatPtr toStat(StatSetPtr set);
+	void extend(); // 扩展整个矩阵 
+	int toID(StatSetPtr set); 
+	StatPtr toStat(StatSetPtr set); // 返回状态集映射的状态
 	void rowExtend(int rowIndex);
 	void insertRow(StatSetPtr set);
 };

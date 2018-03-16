@@ -1,6 +1,7 @@
 #pragma once
 
 #include "EpsilonNFA.h"
+#include "Graph.h"
 
 class GraphManager
 {
@@ -11,6 +12,7 @@ public:
 	static GraphPtr bingLink(Graphes& graphes);
 	// ÷ÿ∏¥ TODO: Debug
 	static GraphPtr repeatLink(GraphPtr graph);
+	static GraphPtr NFAtoDFA(GraphPtr srcGraph);
 
 private:
 

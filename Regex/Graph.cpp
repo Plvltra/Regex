@@ -5,16 +5,13 @@
 #include "GraphManager.h"
 #include "DataType.h"
 #include "StatSet.h"
+#include "DFAMatrix.h"
 
 using namespace std;
 
 // Graph¿‡
 int Graph::MAX_ID = 0;
 
-Graph::Graph(StatPtr start)
-{
-	startStat = start;
-}
 // TODO: debug
 Graph::Graph(StatPtr startStat, StatPtr endStat)
 	: startStat(startStat), endStat(endStat)
@@ -47,11 +44,6 @@ void Graph::toNFA()
 		}
 	};
 	bfs(deleteEpsEdge);
-}
-
-void Graph::toDFA()
-{
-	// TODO:
 }
 
 void Graph::bfs(StatDealer dealer)
