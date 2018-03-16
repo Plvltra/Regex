@@ -1,6 +1,8 @@
 #include <set>
 
 #include "Graph.h"
+#include "LinkManager.h"
+#include "GraphManager.h"
 #include "DataType.h"
 #include "StatSet.h"
 
@@ -20,6 +22,16 @@ Graph::Graph(StatPtr startStat, StatPtr endStat)
 	if (!startStat || !endStat)
 		throw std::exception("构建图存在空指针");
 	endStat->setEnd(true);
+}
+
+StatPtr Graph::getStart()
+{
+	return startStat;
+}
+
+StatPtr Graph::getEnd()
+{
+	return endStat;
 }
 
 void Graph::toNFA()

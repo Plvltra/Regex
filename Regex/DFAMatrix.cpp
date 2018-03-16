@@ -1,11 +1,37 @@
 
 #include "DFAMatrix.h"
+#include "LinkManager.h"
 #include "StatSet.h"
 #include "Graph.h"
 #include "DataType.h"
 
 using namespace std;
 
+// Row
+Row::Row(StatSetPtr first)
+{
+	arr[0] = first;
+}
+
+StatSetPtr Row::operator[] (int i)
+{
+	if (i >= 0 && i < SIZE)
+		return arr[i];
+	else
+		throw std::exception("对行索引非法");
+}
+
+Elem* Row::begin() 
+{
+	return arr; 
+}
+
+Elem* Row::end()
+{
+	return arr + SIZE;
+}
+
+// DFAMatrix 
 DFAMatrix::DFAMatrix(StatSetPtr start)
 {
 	insertRow(start);
