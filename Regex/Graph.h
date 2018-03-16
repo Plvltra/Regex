@@ -2,30 +2,39 @@
 
 #include "EpsilonNFA.h"
 
-class Graph
+class BaseGraph
+{
+public:
+	// Constructors & Destructors
+	BaseGraph(StatPtr start);
+	// Functions
+	StatPtr getStart();
+	void printGraph();
+protected:
+	// Attributes
+	static int MAX_ID;			 // 初始值为0，对节点范围[1, MAX_ID]
+	StatPtr startStat;
+	// Functions
+	void bfs(StatDealer dealer); // bfs遍历过程中处理数据
+	void resetChecked();		 // 若图中所有节点都是检查过的, 则函数可将所有节点置为未检查状态
+	void assignID();			 // 分配ID
+	void resetID();				 // 重置ID
+	
+};
+
+class Graph : public BaseGraph
 {
 public:
 	// Constructors & Destructors
 	Graph(StatPtr startStat, StatPtr endStat);
 	// Functions
-	StatPtr getStart();
 	StatPtr getEnd();
-	void toNFA(); // epsNFA ->NFA
-	void printGraph();
-	// 内部定义类型
+	void toNFA();				// epsNFA ->NFA
 
 private:
 	// Attributes
-	StatPtr startStat;
 	StatPtr endStat;
-	static int MAX_ID; // 从1开始
 	// Functions
-	void bfs(StatDealer dealer); // bfs遍历过程中处理数据
-	// 若图中所有节点都是检查过的, 则函数可将所有节点置为未检查状态
-	void resetChecked();
 	void markValid();
 	void eraseInvalid();
-	// 重新分配ID
-	void assignID();
-	void resetID();
 };
