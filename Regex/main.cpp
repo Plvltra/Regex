@@ -20,33 +20,34 @@ int main()
 {
 	try
 	{
-		StatPtr s1 = makeStatPtr();
-		StatPtr e1 = makeStatPtr();
-		StatPtr s2 = makeStatPtr();
-		StatPtr e2 = makeStatPtr();
-		StatPtr s3 = makeStatPtr();
-		StatPtr e3 = makeStatPtr();
+		StatPtr s1 = makeStat();
+		StatPtr e1 = makeStat();
+		StatPtr s2 = makeStat();
+		StatPtr e2 = makeStat();
+		StatPtr s3 = makeStat();
+		StatPtr e3 = makeStat();
 		LinkManager::link(s1, e1, 'a');
 		LinkManager::link(s2, e2, 'b');
 		LinkManager::link(s3, e3, 'c');
-		GraphPtr g1 = makeGraphPtr(s1, e1);
-		GraphPtr g2 = makeGraphPtr(s2, e2);
-		GraphPtr g3 = makeGraphPtr(s3, e3);
-		Graphes graphes = { g1, g2, g3 };
-		GraphPtr g4 = GraphManager::bingLink(graphes);
+		GraphPtr g1 = makeGraph(s1, e1);
+		GraphPtr g2 = makeGraph(s2, e2);
+		GraphPtr g3 = makeGraph(s3, e3);
+		GraphPtr g5 = GraphManager::bingLink(Graphes{ g1, g2, g3 });
 
-		//StatPtr s4 = makeStatPtr();
-		//StatPtr e4 = makeStatPtr();
-		//LinkManager::link(s4, e4, 'd');
-		//GraphPtr g5 = makeGraphPtr(s4, e4);
-		//GraphPtr g6 = GraphManager::chuanLink(g4, g5);
+		StatPtr s4 = makeStat();
+		StatPtr e4 = makeStat();
+		LinkManager::link(s4, e4, 'd');
+		GraphPtr g4 = makeGraph(s4, e4);
+		
+		GraphPtr g6 = GraphManager::bingLink(Graphes{ g4, g5 });
 		//GraphPtr g6 = GraphManager::repeatLink(g4);
-		g4->printGraph();
-		g4->toNFA();
-		g4->printGraph();
 
-		g4->printGraph();
-
+		g6->printGraph();
+		NFAGraphPtr ng = makeNFAGraph(g6);
+		ng->printGraph();
+		DFAGraphPtr dg = makeDFAGraph(ng);
+		dg->printGraph();
+		
 		//using Arithmetic::test;
 		//test();
 
@@ -70,6 +71,6 @@ int main()
 	}
 	catch (...)
 	{
-		cout << "exception" << endl;
+		cout << "got exception" << endl;
 	}
 }

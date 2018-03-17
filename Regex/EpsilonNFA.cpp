@@ -1,36 +1,46 @@
 #include "EpsilonNFA.h"
 #include "Graph.h"
 #include "DataType.h"
-#include "DFAGraph.h"
 #include "StatSet.h"
+#include "DFAMatrix.h"
 using namespace std;
 
-StatPtr makeStatPtr()
+StatPtr makeStat()
 {
 	return make_shared<Status>();
 }
 
-StatPtr makeStatPtr(bool isEnd, int ID)
+StatPtr makeStat(bool isEnd, int ID)
 {
 	return make_shared<Status>(isEnd, ID);
 }
 
-DFAGraphPtr makeDFAGraphPtr(GraphPtr graph)
+NFAGraphPtr makeNFAGraph(GraphPtr graph)
 {
-	return make_shared<DFAGraph>(graph);
+	return make_shared<NFAGraph>(graph);
 }
 
-GraphPtr makeGraphPtr(StatPtr start, StatPtr end)
+DFAGraphPtr makeDFAGraph(NFAGraphPtr NFAGraph)
+{
+	return make_shared<DFAGraph>(NFAGraph);
+}
+
+DFAMatrixPtr makeMatrix(NFAGraphPtr NFAGraph)
+{
+	return make_shared<DFAMatrix>(NFAGraph);
+}
+
+GraphPtr makeGraph(StatPtr start, StatPtr end)
 {
 	return make_shared<Graph>(start, end);
 }
 
-EdgePtr makeEdgePtr(Type content, StatPtr fromStat, StatPtr toStat)
+EdgePtr makeEdge(Type content, StatPtr fromStat, StatPtr toStat)
 {
 	return make_shared<StatusEdge>(content, fromStat, toStat);
 }
 
-StatSetPtr makeStatSetPtr(StatPtr stat)
+StatSetPtr makeStatSet(StatPtr stat)
 {
 	return make_shared<StatSet>(stat);
 }

@@ -11,7 +11,7 @@ void LinkManager::link(StatPtr from, StatPtr to, Type content)
 	if (isLinked(from, to))
 		return;
 
-	EdgePtr edge = makeEdgePtr(content, from, to);
+	EdgePtr edge = makeEdge(content, from, to);
 	from->addOutEdge(edge);
 	to->addInEdge(edge);
 }

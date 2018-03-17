@@ -1,14 +1,16 @@
 #pragma once
 #include <string>
+#include <memory>
 
 #include "Node.h"
 
 // a*   a|b   ab
+
+typedef shared_ptr<Node> NodePtr;
 class Regex
 {
 public:
 	Regex(std::string pattern);
-	virtual ~Regex();
 
 public:
 	void printTree();
@@ -23,6 +25,8 @@ private:
 	Node* parseExpr();
 	Node* parseTerm();
 	Node* parseCharSet();
+
+	
 
 	bool inExprSet(char);
 	bool inTermSet(char);

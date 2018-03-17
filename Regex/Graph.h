@@ -5,14 +5,12 @@
 class BaseGraph
 {
 public:
-	// Constructors & Destructors
-	BaseGraph(StatPtr start);
 	// Functions
 	StatPtr getStart();
 	void printGraph();
 protected:
 	// Attributes
-	static int MAX_ID;			 // 初始值为0，对节点范围[1, MAX_ID]
+	static int MAX_ID;		 // TODO: 改变为成员变量 初始值为0，对节点范围[1, MAX_ID]
 	StatPtr startStat;
 	// Functions
 	void bfs(StatDealer dealer); // bfs遍历过程中处理数据
@@ -29,12 +27,26 @@ public:
 	Graph(StatPtr startStat, StatPtr endStat);
 	// Functions
 	StatPtr getEnd();
-	void toNFA();				// epsNFA ->NFA
-
 private:
 	// Attributes
 	StatPtr endStat;
+};
+
+class NFAGraph : public BaseGraph
+{
+public:
+	NFAGraph(GraphPtr graph);
+private:
 	// Functions
+	void buildNFAGraph();			// 通过内部删除边得到NFA图
 	void markValid();
 	void eraseInvalid();
+};
+
+class DFAGraph : public BaseGraph
+{
+public:
+	DFAGraph(NFAGraphPtr NFAGraph);
+private:
+	DFAMatrixPtr matrix;
 };

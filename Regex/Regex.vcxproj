@@ -85,7 +85,7 @@
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
@@ -155,6 +155,7 @@
     <ClCompile Include="GraphManager.cpp" />
     <ClCompile Include="LinkManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NFAGraph.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Regex.cpp" />
     <ClCompile Include="DataType.cpp" />
@@ -163,12 +164,10 @@
   <ItemGroup>
     <ClInclude Include="Arithmetic.h" />
     <ClInclude Include="Debug.h" />
-    <ClInclude Include="DFAGraph.h" />
     <ClInclude Include="DFAMatrix.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="GraphManager.h" />
     <ClInclude Include="LinkManager.h" />
-    <ClInclude Include="NFA.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Regex.h" />
     <ClInclude Include="EpsilonNFA.h" />

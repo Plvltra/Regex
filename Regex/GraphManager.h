@@ -9,10 +9,9 @@ public:
 	// 串联
 	static GraphPtr chuanLink(GraphPtr from, GraphPtr to);
 	// 并联
-	static GraphPtr bingLink(Graphes& graphes);
+	static GraphPtr bingLink(Graphes graphes);
 	// 重复 TODO: Debug
 	static GraphPtr repeatLink(GraphPtr graph);
-	static GraphPtr NFAtoDFA(GraphPtr srcGraph);
 
 private:
 

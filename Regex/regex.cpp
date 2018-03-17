@@ -19,11 +19,6 @@ Regex::Regex(string pattern)
 	}
 }
 
-Regex::~Regex()
-{
-	delete root;
-}
-
 void Regex::printTree()
 {
 	//root->inOrderPrint();

@@ -1,14 +1,2 @@
 ﻿  main.cpp
-  Graph.cpp
-c:\users\asus\documents\github\regex\regex\graph.cpp(13): warning C4356: “BaseGraph::MAX_ID”: 静态数据成员无法通过派生类初始化
-  BaseGraph.cpp
-  正在生成代码...
-  正在跳过...(未检测到相关更改)
-  StatSet.cpp
-  LinkManager.cpp
-  DataType.cpp
-  GraphManager.cpp
-  EpsilonNFA.cpp
-  DFAMatrix.cpp
-  DFAGraph.cpp
   Regex.vcxproj -> C:\Users\asus\Documents\GitHub\Regex\Regex\Debug\Regex.exe

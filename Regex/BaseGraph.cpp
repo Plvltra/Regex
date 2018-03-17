@@ -5,12 +5,7 @@
 
 using namespace std;
 
-BaseGraph::BaseGraph(StatPtr start)
-	:startStat(start)
-{
-	if (!start)
-		throw std::exception("构建图存在空指针");
-}
+int BaseGraph::MAX_ID = 0;
 
 StatPtr BaseGraph::getStart()
 {
@@ -90,6 +85,8 @@ void BaseGraph::printGraph()
 			Stats nextStats = front->nextStats();
 			for (auto stat : nextStats)
 			{
+				/*if(!stat->checked)
+					que.push(stat); */
 				que.push(stat); // 1: 打印重复的(会造成死循环)
 			}
 		}

@@ -54,6 +54,9 @@
     <ClCompile Include="BaseGraph.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="NFAGraph.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arithmetic.h">
@@ -66,9 +69,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="EpsilonNFA.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="NFA.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Debug.h">
@@ -90,9 +90,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="DFAMatrix.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="DFAGraph.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

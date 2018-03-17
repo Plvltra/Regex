@@ -1,11 +1,12 @@
 
 #include "Graph.h"
-#include "DFAGraph.h"
+#include "DFAMatrix.h"
 
 using namespace std;
 
-DFAGraph::DFAGraph(GraphPtr NFAGraph)
-	:matrix(NFAGraph)
+DFAGraph::DFAGraph(NFAGraphPtr NFAGraph)
 {
-	start = matrix.buildDFAGraph();
+	matrix = makeMatrix(NFAGraph);
+	startStat = matrix->buildDFAGraph();
+	assignID();
 }
