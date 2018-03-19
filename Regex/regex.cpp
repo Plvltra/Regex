@@ -161,3 +161,28 @@ inline bool Regex::inCharSet(char c)
 {
 	return isalpha(c) || isdigit(c);
 }
+
+
+// A = A '|' B
+// A = B
+
+// B = BC
+// B = C
+
+// C = C '+'
+// C = C '*'
+// C = C '?'
+// C = '(' A ')'
+// C = D
+
+// D = char
+// D = '\' char
+// D = '[' E ']'
+// D = "[^" E ']'
+
+// E = EF
+// E = F
+
+// F = char '-' char
+// F = char
+// F = '\' char
