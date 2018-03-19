@@ -50,24 +50,20 @@ bool Status::inStats(Stats stats)
 	return false;
 }
 
-bool Status::next(StatPtr stat, Type content)
+bool Status::next(StatPtr stat)
 {
 	if (stat)
-		return stat->previous(shared_from_this(), content);
+		return stat->previous(shared_from_this());
 	else
 		return false;
 }
 
-bool Status::previous(StatPtr stat, Type content)
+bool Status::previous(StatPtr stat)
 {
 	if (stat)
 	{
-		Edges outs = this->getOutEdges();
-		for (auto out : outs)
-		{
-			if (out->getTo() == stat && out->getContent() == content)
-				return true;
-		}
+		Stats nexts = this->nextStats();
+		return stat->inStats(nexts);
 	}
 	return false;
 }

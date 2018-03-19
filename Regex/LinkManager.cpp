@@ -8,8 +8,6 @@ void LinkManager::link(StatPtr from, StatPtr to, Type content)
 {
 	if (!from || !to)
 		throw exception("连接失败，存在空指针");
-	if (isLinked(from, to, content))
-		return;
 
 	EdgePtr edge = makeEdge(content, from, to);
 	from->addOutEdge(edge);
@@ -59,32 +57,29 @@ void LinkManager::eraseStat(StatPtr stat)
 	level--;
 }
 
-bool LinkManager::isLinked(StatPtr stat1, StatPtr stat2, Type content)
+bool LinkManager::isLinked(StatPtr from, StatPtr to)
 {
-	if (stat1 == NULL || stat2 == NULL)
+	if (from == NULL || to == NULL)
 		return false;
-	return stat1->previous(stat2, content);
+	return from->previous(to) || from->next(to);
 }
 
-EdgePtr LinkManager::getLink(StatPtr stat1, StatPtr stat2)
+EdgePtr LinkManager::getLink(StatPtr from, StatPtr to)
 {
-	// 保持先后顺序
-	if (!isLinked(stat1, stat2))
+	if (isLinked(from, to))
 		return NULL;
-	else if (stat1->next(stat2))
-		getLink(stat2, stat1);
 
-	Edges outEdges = stat1->getOutEdges();
+	Edges outEdges = from->getOutEdges();
 	for (auto edge : outEdges)
 	{
-		if (edge->getTo() == stat2)
+		if (edge->getTo() == to)
 			return edge;
 	}
 }
 
-Type LinkManager::getLinkCont(StatPtr stat1, StatPtr stat2)
+Type LinkManager::getLinkCont(StatPtr from, StatPtr to)
 {
-	auto edge = getLink(stat1, stat2);
+	auto edge = getLink(from, to);
 	return edge->getContent();
 }
 

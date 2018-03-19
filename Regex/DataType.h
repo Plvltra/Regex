@@ -30,8 +30,8 @@ public:
 	// 获得后继边内容
 	std::vector<Type> nextContents();
 	bool inStats(Stats stats);
-	bool next(StatPtr stat, Type content);
-	bool previous(StatPtr stat, Type content);
+	bool next(StatPtr stat);
+	bool previous(StatPtr stat);
 
 private:
 	bool isEnd;
