@@ -85,11 +85,19 @@ void BaseGraph::printGraph()
 			Stats nextStats = front->nextStats();
 			for (auto stat : nextStats)
 			{
-				/*if(!stat->checked){
-					que.push(stat); 
-					stat->checked = true;
-				}*/
-				que.push(stat); // 1: 打印重复的(会造成死循环)
+				bool repeatPrint = 0;
+				if (!repeatPrint)
+				{
+					if (!stat->checked)
+					{
+						que.push(stat);
+						stat->checked = true;
+					}
+				}
+				else
+				{
+					que.push(stat); // 1: 打印重复的(会造成死循环)
+				}
 			}
 		}
 		cout << endl;
@@ -102,6 +110,7 @@ void BaseGraph::printGraph()
 		cout << endl;
 	}
 	cout << "--------------------" << endl;
+	resetChecked();
 }
 
 void BaseGraph::assignID()

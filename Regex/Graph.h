@@ -17,7 +17,6 @@ protected:
 	void resetChecked();		 // 若图中所有节点都是检查过的, 则函数可将所有节点置为未检查状态
 	void assignID();			 // 分配ID
 	void resetID();				 // 重置ID
-	
 };
 
 class Graph : public BaseGraph
@@ -48,7 +47,11 @@ class DFAGraph : public BaseGraph
 {
 public:
 	DFAGraph(NFAGraphPtr NFAGraph);
+	// 返回前闭后开
+	// return: -1表示不存在匹配
 	int match(const std::string& text);
 private:
 	DFAMatrixPtr matrix;
+	// return: stat唯一对应content的状态
+	static StatPtr nextStat(StatPtr stat, Type content);
 };

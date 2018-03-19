@@ -53,7 +53,6 @@ void LinkManager::eraseStat(StatPtr stat)
 		skipStat(preStat, stat);
 	}
 	deleteLinks(stat, stat->nextStats()); // É¾È¥³öµÄ±ß
-	stat.reset();
 	level--;
 }
 
@@ -66,7 +65,7 @@ bool LinkManager::isLinked(StatPtr from, StatPtr to)
 
 EdgePtr LinkManager::getLink(StatPtr from, StatPtr to)
 {
-	if (isLinked(from, to))
+	if (!from->previous(to))
 		return NULL;
 
 	Edges outEdges = from->getOutEdges();

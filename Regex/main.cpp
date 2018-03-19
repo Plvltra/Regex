@@ -20,17 +20,25 @@ int main()
 {
 	try
 	{
-		/*Regex re("a*");
-		re.match("aaadcdede");*/
-
-		GraphPtr g = makeGraph('a');
-		GraphPtr g2 = GraphManager::repeatLink(g);
-		g2->printGraph();
-		NFAGraphPtr g3 = makeNFAGraph(g2);
-		StatPtr s = g3->getStart();
-		g3->printGraph();
-		DFAGraphPtr g4 = makeDFAGraph(g3);
-		g4->printGraph();
+		int mode = 0;
+		if (mode == 0)
+		{
+			Regex re("ab|cd");
+			re.match("d");
+		}
+		else if(mode == 1) 
+		{
+			Regex re("abc|d");
+			/*GraphPtr g = makeGraph('a');
+			GraphPtr g2 = GraphManager::repeatLink(g);
+			g2->printGraph();
+			NFAGraphPtr g3 = makeNFAGraph(g2);
+			StatPtr s = g3->getStart();
+			g3->printGraph();
+			DFAGraphPtr g4 = makeDFAGraph(g3);
+			g4->printGraph();*/
+		}
+		cout << "finished" << endl;
 
 		//GraphPtr g1 = makeGraph('a');
 		//GraphPtr g2 = makeGraph('b');
@@ -45,9 +53,6 @@ int main()
 		//ng->printGraph();
 		//DFAGraphPtr dg = makeDFAGraph(ng);
 		//dg->printGraph();
-		
-
-
 
 		//using Arithmetic::test;
 		//test();

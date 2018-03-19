@@ -19,15 +19,25 @@ int DFAGraph::match(const string& text)
 	int ans = -1;
 	for (int i = 0; i < size; i++)
 	{
+		// 每接受一个状态，向后扩展
 		if (curr->getEnd())
-			ans = i;
+			ans++;
 
-		auto nexts = curr->nextStats(text[i]);
-		if (nexts.empty())
+		auto next = nextStat(curr, text[i]);
+		if (!next)
 			break;
 		else
-			curr = nexts[0]; // dfa nextStats()是单状态
+			curr = next; // dfa nextStats()是单状态
 	}
 	return ans;
 }
 
+StatPtr DFAGraph::nextStat(StatPtr stat, Type content)
+{
+	for (auto edge : stat->getOutEdges())
+	{
+		if (edge->getContent() == content)
+			return edge->getTo();
+	}
+	return NULL;
+}
