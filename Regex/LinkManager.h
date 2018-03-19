@@ -18,8 +18,9 @@ public:
 	   若被删除的是end则转移状态 */
 	static void eraseStat(StatPtr stat);
 	// Function
-	static bool isLinked(StatPtr stat1, StatPtr stat2);
-	/* @return: NULL说明前后两者不连接 */
+	// stat1 previous to stat2
+	static bool isLinked(StatPtr stat1, StatPtr stat2, Type content);
+	// return: NULL说明前后两者不连接 
 	static EdgePtr getLink(StatPtr stat1, StatPtr stat2);
 	static Type getLinkCont(StatPtr stat1, StatPtr stat2);
 
