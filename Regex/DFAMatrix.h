@@ -7,16 +7,13 @@
 
 const int SIZE = 128;
 // StatSetPtr Array
-typedef StatSetPtr Elem;
-
 struct Row
 {
 	StatSetPtr arr[SIZE];
 	// Functions
+	void printRow();
 	explicit Row(StatSetPtr first);
 	StatSetPtr& operator[] (int i); // ·µ»Ølvalue
-	Elem* begin();
-	Elem* end();
 };
 
 // DFAMatrix
@@ -38,4 +35,5 @@ private:
 	StatPtr toStat(StatSetPtr set); // ·µ»Ø×´Ì¬¼¯Ó³ÉäµÄ×´Ì¬
 	void rowExtend(int rowIndex);
 	void insertRow(StatSetPtr set);
+	void printMatrix();
 };

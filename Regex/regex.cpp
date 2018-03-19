@@ -9,10 +9,14 @@ using namespace std;
 Regex::Regex(string pattern)
 	: pattern(pattern), index(0)
 {
-	_root = parse(); _root->rowOrderPrint();
-	graph = buildGraph(_root); graph->printGraph();
-	nfaGraph = makeNFAGraph(graph); nfaGraph->printGraph();
-	dfaGraph = makeDFAGraph(nfaGraph); dfaGraph->printGraph();
+	_root = parse();
+	_root->rowOrderPrint();
+	graph = buildGraph(_root); 
+	graph->printGraph();
+	nfaGraph = makeNFAGraph(graph); 
+	nfaGraph->printGraph();
+	dfaGraph = makeDFAGraph(nfaGraph);
+	dfaGraph->printGraph();
 }
 
 void Regex::printTree()

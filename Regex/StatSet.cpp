@@ -28,7 +28,7 @@ bool StatSet::operator== (const StatSet& other) const
 
 StatSetPtr StatSet::nextSet(Type linkCont)
 {
-	auto nextSet = make_shared<StatSet>();
+	auto nextSet = makeStatSet();
 	for (auto elem : elems)
 	{
 		for (auto temp : elem->nextStats(linkCont))
@@ -54,11 +54,20 @@ auto StatSet::end()
 {
 	return elems.end();
 }
-bool StatSet::size()
+int StatSet::size()
 {
 	return elems.size();
 }
 bool StatSet::empty()
 {
 	return elems.empty();
+}
+
+void StatSet::printSet()
+{
+	cout << "(";
+	int size = this->size();
+	for (auto elem: elems)
+		cout << elem->ID << " ";
+	cout << ")";
 }

@@ -45,6 +45,11 @@ EdgePtr makeEdge(Type content, StatPtr fromStat, StatPtr toStat)
 	return make_shared<StatusEdge>(content, fromStat, toStat);
 }
 
+StatSetPtr makeStatSet()
+{
+	return make_shared<StatSet>();
+}
+
 StatSetPtr makeStatSet(StatPtr stat)
 {
 	return make_shared<StatSet>(stat);

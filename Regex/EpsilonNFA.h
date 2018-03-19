@@ -42,4 +42,5 @@ DFAMatrixPtr makeMatrix(NFAGraphPtr NFAGraph);
 GraphPtr makeGraph(Type content);
 GraphPtr makeGraph(StatPtr start, StatPtr end);
 EdgePtr makeEdge(Type content, StatPtr fromStat, StatPtr toStat);
+StatSetPtr makeStatSet();
 StatSetPtr makeStatSet(StatPtr stat);

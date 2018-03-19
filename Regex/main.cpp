@@ -23,8 +23,8 @@ int main()
 		int mode = 0;
 		if (mode == 0)
 		{
-			Regex re("ab|cd");
-			re.match("d");
+			Regex re("a");
+			re.match("dabc");
 		}
 		else if(mode == 1) 
 		{

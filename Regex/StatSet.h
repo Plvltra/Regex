@@ -20,8 +20,9 @@ public:
 	StatSetPtr nextSet(Type linkCont);
 	auto begin();
 	auto end();
-	bool size();
+	int size();
 	bool empty();
+	void printSet();
 	// Attributes
 	bool isEnd;
 

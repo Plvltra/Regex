@@ -17,17 +17,14 @@ int DFAGraph::match(const string& text)
 	int size = text.size();
 	StatPtr curr = startStat;
 	int ans = -1;
+	if (curr->getEnd()) ans = 0;
 	for (int i = 0; i < size; i++)
 	{
-		// 每接受一个状态，向后扩展
-		if (curr->getEnd())
-			ans++;
-
-		auto next = nextStat(curr, text[i]);
-		if (!next)
+		curr = nextStat(curr, text[i]);
+		if (!curr)
 			break;
-		else
-			curr = next; // dfa nextStats()是单状态
+		else if (curr->getEnd()) // 每接受一个状态，向后扩展
+			ans = i+1;
 	}
 	return ans;
 }

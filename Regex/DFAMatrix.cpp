@@ -13,6 +13,18 @@ Row::Row(StatSetPtr first)
 	arr[0] = first;
 }
 
+void Row::printRow()
+{
+	for (int i = 0; i < SIZE; i++)
+	{
+		if (arr[i])
+			arr[i]->printSet();
+		else
+			cout << "()";
+		cout << ", ";
+	}
+}
+
 StatSetPtr& Row::operator[] (int i)
 {
 	if (i >= 0 && i < SIZE)
@@ -21,15 +33,6 @@ StatSetPtr& Row::operator[] (int i)
 		throw std::exception("对行索引非法");
 }
 
-Elem* Row::begin() 
-{
-	return arr; 
-}
-
-Elem* Row::end()
-{
-	return arr + SIZE;
-}
 
 // DFAMatrix 
 DFAMatrix::DFAMatrix(NFAGraphPtr NFAGraph)
@@ -66,7 +69,10 @@ void DFAMatrix::extend(StatPtr start)
 	insertRow(stats);
 	// 生成后面的行
 	for (int i = 0; i < MAX_ROW; i++)
+	{
 		rowExtend(i);
+		matrix;
+	}
 }
 
 inline int DFAMatrix::toID(StatSetPtr set)
@@ -95,8 +101,22 @@ void DFAMatrix::rowExtend(int rowIndex)
 		matrix[rowIndex][i] = extend;
 		// 若存在进行新的行插入
 		if (extend)
-			if (!IDMap.count(extend))
+		{
+			// 检测是否存在extend
+			bool exist = false;
+			for (auto pair : IDMap)
+			{
+				StatSetPtr key = pair.first;
+				if (*key == *extend)
+				{
+					exist = true;
+					break;
+				}
+			}
+			if(!exist)
 				insertRow(extend);
+		}
+			
 	}
 }
 
@@ -107,4 +127,14 @@ void DFAMatrix::insertRow(StatSetPtr rowFirst)
 	MAX_ROW++;
 	IDMap[rowFirst] = MAX_ROW;
 	matrix.push_back(Row(rowFirst));
+}
+
+void DFAMatrix::printMatrix()
+{
+	for (auto row : matrix)
+	{
+		row.printRow();
+		cout << endl;
+	}
+	cout << "-----------------------------" << endl;
 }

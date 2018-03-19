@@ -1,7 +1,2 @@
 ﻿  main.cpp
-  Regex.cpp
-c:\users\asus\documents\github\regex\regex\regex.cpp(35): warning C4389: “!=”: 有符号/无符号不匹配
-c:\users\asus\documents\github\regex\regex\regex.cpp(45): warning C4018: “<”: 有符号/无符号不匹配
-c:\users\asus\documents\github\regex\regex\regex.cpp(76): warning C4018: “<”: 有符号/无符号不匹配
-  正在生成代码...
   Regex.vcxproj -> C:\Users\asus\Documents\GitHub\Regex\Regex\Debug\Regex.exe
