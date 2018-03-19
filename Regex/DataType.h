@@ -21,7 +21,9 @@ public:
 	Edges& getInEdges();
 	Edges& getOutEdges();
 	// 获得后继状态
+	// @return: 不存在返回空集合
 	Stats nextStats();
+	// @return: 不存在返回空集合
 	Stats nextStats(Type linkCont); // 指定连接内容
 	// 获得前驱状态
 	Stats preStats();

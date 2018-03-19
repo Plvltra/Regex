@@ -24,6 +24,7 @@ class Graph : public BaseGraph
 {
 public:
 	// Constructors & Destructors
+	Graph(Type content);
 	Graph(StatPtr startStat, StatPtr endStat);
 	// Functions
 	StatPtr getEnd();
@@ -47,6 +48,7 @@ class DFAGraph : public BaseGraph
 {
 public:
 	DFAGraph(NFAGraphPtr NFAGraph);
+	int match(const std::string& text);
 private:
 	DFAMatrixPtr matrix;
 };

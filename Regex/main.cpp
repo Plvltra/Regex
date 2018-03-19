@@ -20,34 +20,35 @@ int main()
 {
 	try
 	{
-		StatPtr s1 = makeStat();
-		StatPtr e1 = makeStat();
-		StatPtr s2 = makeStat();
-		StatPtr e2 = makeStat();
-		StatPtr s3 = makeStat();
-		StatPtr e3 = makeStat();
-		LinkManager::link(s1, e1, 'a');
-		LinkManager::link(s2, e2, 'b');
-		LinkManager::link(s3, e3, 'c');
-		GraphPtr g1 = makeGraph(s1, e1);
-		GraphPtr g2 = makeGraph(s2, e2);
-		GraphPtr g3 = makeGraph(s3, e3);
-		GraphPtr g5 = GraphManager::bingLink(Graphes{ g1, g2, g3 });
+		/*Regex re("a*");
+		re.match("aaadcdede");*/
 
-		StatPtr s4 = makeStat();
-		StatPtr e4 = makeStat();
-		LinkManager::link(s4, e4, 'd');
-		GraphPtr g4 = makeGraph(s4, e4);
-		
-		GraphPtr g6 = GraphManager::bingLink(Graphes{ g4, g5 });
-		//GraphPtr g6 = GraphManager::repeatLink(g4);
+		GraphPtr g = makeGraph('a');
+		GraphPtr g2 = GraphManager::repeatLink(g);
+		g2->printGraph();
+		NFAGraphPtr g3 = makeNFAGraph(g2);
+		StatPtr s = g3->getStart();
+		g3->printGraph();
+		DFAGraphPtr g4 = makeDFAGraph(g3);
+		g4->printGraph();
 
-		g6->printGraph();
-		NFAGraphPtr ng = makeNFAGraph(g6);
-		ng->printGraph();
-		DFAGraphPtr dg = makeDFAGraph(ng);
-		dg->printGraph();
+		//GraphPtr g1 = makeGraph('a');
+		//GraphPtr g2 = makeGraph('b');
+		//GraphPtr g3 = makeGraph('c');
+		//GraphPtr g5 = GraphManager::bingLink(Graphes{ g1, g2, g3 });
+
+		//GraphPtr g4 = makeGraph('d');
+		//GraphPtr g6 = GraphManager::bingLink(Graphes{ g4, g5 });
+		////GraphPtr g6 = GraphManager::repeatLink(g4);
+		//g6->printGraph();
+		//NFAGraphPtr ng = makeNFAGraph(g6);
+		//ng->printGraph();
+		//DFAGraphPtr dg = makeDFAGraph(ng);
+		//dg->printGraph();
 		
+
+
+
 		//using Arithmetic::test;
 		//test();
 
@@ -55,9 +56,9 @@ int main()
 		////Regex regex("a|b|c|d|e|f");
 		//regex.printTree();
 
-		/*Node* lchild = new Node('a');
-		Node* rchild = new Node('b');
-		Node* root = new Node('&', lchild, rchild);
+		/*NodePtr lchild = new Node('a');
+		NodePtr rchild = new Node('b');
+		NodePtr root = new Node('&', lchild, rchild);
 		root->rowPrint();*/
 
 		//string src = "asduhb@qq.com";

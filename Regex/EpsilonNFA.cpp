@@ -30,6 +30,11 @@ DFAMatrixPtr makeMatrix(NFAGraphPtr NFAGraph)
 	return make_shared<DFAMatrix>(NFAGraph);
 }
 
+GraphPtr makeGraph(Type content)
+{
+	return make_shared<Graph>(content);
+}
+
 GraphPtr makeGraph(StatPtr start, StatPtr end)
 {
 	return make_shared<Graph>(start, end);

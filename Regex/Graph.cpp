@@ -11,6 +11,14 @@ using namespace std;
 
 // GraphÀà
 
+Graph::Graph(Type content)
+{
+	startStat = makeStat();
+	endStat = makeStat();
+	endStat->setEnd(true);
+	LinkManager::link(startStat, endStat, content);
+}
+
 Graph::Graph(StatPtr start, StatPtr end)
 {
 	if (!start|| !end)

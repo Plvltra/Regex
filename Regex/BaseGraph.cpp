@@ -85,8 +85,10 @@ void BaseGraph::printGraph()
 			Stats nextStats = front->nextStats();
 			for (auto stat : nextStats)
 			{
-				/*if(!stat->checked)
-					que.push(stat); */
+				/*if(!stat->checked){
+					que.push(stat); 
+					stat->checked = true;
+				}*/
 				que.push(stat); // 1: 打印重复的(会造成死循环)
 			}
 		}

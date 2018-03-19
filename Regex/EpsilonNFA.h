@@ -8,7 +8,7 @@
 #include "Debug.h"
 
 typedef char Type;
-const Type epsilon = '*';
+const Type epsilon = '.';
 
 class Status;
 class StatusEdge;
@@ -39,6 +39,7 @@ StatPtr makeStat(bool isEnd, int ID);
 NFAGraphPtr makeNFAGraph(GraphPtr graph);
 DFAGraphPtr makeDFAGraph(NFAGraphPtr NFAGraph);
 DFAMatrixPtr makeMatrix(NFAGraphPtr NFAGraph);
+GraphPtr makeGraph(Type content);
 GraphPtr makeGraph(StatPtr start, StatPtr end);
 EdgePtr makeEdge(Type content, StatPtr fromStat, StatPtr toStat);
 StatSetPtr makeStatSet(StatPtr stat);

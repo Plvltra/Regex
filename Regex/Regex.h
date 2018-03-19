@@ -2,31 +2,35 @@
 #include <string>
 #include <memory>
 
+#include "EpsilonNFA.h"
 #include "Node.h"
+#include "Graph.h"
 
 // a*   a|b   ab
 
-typedef shared_ptr<Node> NodePtr;
 class Regex
 {
 public:
+	// Construtors
 	Regex(std::string pattern);
-
-public:
+	// Functions
 	void printTree();
+	void match(std::string text);
 
 private:
+	// Attributes
 	std::string pattern;
 	int index;
-	Node* root;
-
-private:
-	Node* parse();
-	Node* parseExpr();
-	Node* parseTerm();
-	Node* parseCharSet();
-
-	
+	NodePtr _root;
+	GraphPtr graph;
+	NFAGraphPtr nfaGraph;
+	DFAGraphPtr dfaGraph;
+	// Functions
+	NodePtr parse();
+	NodePtr parseExpr();
+	NodePtr parseTerm();
+	NodePtr parseCharSet();
+	GraphPtr buildGraph(NodePtr root);
 
 	bool inExprSet(char);
 	bool inTermSet(char);

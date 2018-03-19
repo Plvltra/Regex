@@ -18,6 +18,11 @@ GraphPtr GraphManager::chuanLink(GraphPtr from, GraphPtr to)
 	return makeGraph(from->getStart(), to->getEnd());
 }
 // ²¢Áª
+GraphPtr GraphManager::bingLink(GraphPtr g1, GraphPtr g2)
+{
+	Graphes graphes = { g1, g2 };
+	return bingLink(graphes);
+}
 GraphPtr GraphManager::bingLink(Graphes graphes)
 {
 	StatPtr newStart = makeStat();

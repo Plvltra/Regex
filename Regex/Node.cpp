@@ -5,57 +5,32 @@
 
 using namespace std;
 
+NodePtr makeNode(char cont)
+{
+	return make_shared<Node>(cont);
+}
+NodePtr makeNode(char cont, NodePtr lchild)
+{
+	return make_shared<Node>(cont, lchild);
+}
+NodePtr makeNode(char cont, NodePtr lchild, NodePtr rchild)
+{
+	return make_shared<Node>(cont, lchild, rchild);
+}
+
 Node::Node(char que)
 	: Node(que, NULL, NULL)
 {
 }
 
-Node::Node(char que, Node* lchild)
+Node::Node(char que, NodePtr lchild)
 	: Node(que, lchild, NULL)
 {
 }
 
-Node::Node(char que, Node* lchild, Node* rchild)
+Node::Node(char que, NodePtr lchild, NodePtr rchild)
 	: content(que), lchild(lchild), rchild(rchild)
 {
-}
-
-Node::~Node()
-{
-	if(this->lchild)
-		delete this->lchild;
-	if (this->rchild)
-		delete this->rchild;
-}
-
-inline bool Node::isSymbol()
-{
-	return this->rchild || this->rchild;
-}
-
-inline bool Node::isBinOp()
-{
-	return this->lchild && this->rchild;
-}
-
-inline bool Node::isUnaOp()
-{
-	return this->lchild && !this->rchild;
-}
-
-inline char Node::getContent()
-{
-	return this->content;
-}
-
-inline Node* Node::getLchild()
-{
-	return this->lchild;
-}
-
-inline Node* Node::getRchild()
-{
-	return this->rchild;
 }
 
 void Node::inOrderPrint()
@@ -72,14 +47,14 @@ void Node::inOrderPrint()
 
 void Node::rowOrderPrint()
 {
-	queue<Node*> que;
+	queue<NodePtr> que;
 	queue<char> branchQue; // 枝杈
 	// 保证push的非NULL
-	auto safe_push = [&que](Node* value) {
+	auto safe_push = [&que](NodePtr value) {
 		if (value)
 			que.push(value);
 	};
-	auto branch_push = [&branchQue](Node* value) {
+	auto branch_push = [&branchQue](NodePtr value) {
 		if (value) {
 			if (value->isBinOp()) {
 				branchQue.push('/');
@@ -91,13 +66,13 @@ void Node::rowOrderPrint()
 		}
 	};
 
-	safe_push(this);
+	safe_push(shared_from_this());
 	while (!que.empty())
 	{
 		int count = que.size();
 		while (count--)
 		{
-			Node* top = que.front();
+			NodePtr top = que.front();
 			que.pop();
 			cout << top->content << " ";
 			safe_push(top->lchild);
