@@ -52,3 +52,11 @@ GraphPtr GraphManager::repeatLink(GraphPtr graph)
 	newEnd->setEnd(true);
 	return makeGraph(newStart, newEnd);
 }
+// ¿ÉÑ¡
+GraphPtr GraphManager::chooseLink(GraphPtr graph)
+{
+	StatPtr start = graph->getStart();
+	StatPtr end = graph->getEnd();
+	LinkManager::link(start, end, epsilon);
+	return graph;
+}

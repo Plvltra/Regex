@@ -13,6 +13,8 @@ public:
 	static GraphPtr bingLink(Graphes graphes);
 	// ÷ÿ∏¥ TODO: Debug
 	static GraphPtr repeatLink(GraphPtr graph);
+	// ø…—°
+	static GraphPtr chooseLink(GraphPtr graph);
 
 private:
 

@@ -25,8 +25,8 @@ int main()
 		if (mode == 0)
 		{
 			//Regex re("8aa(bb|dd)");
-			Regex re("1(1*|2)23");
-			re.match("1223");
+			Regex re("a?");
+			re.match("baa");
 		}
 		else if(mode == 1) 
 		{

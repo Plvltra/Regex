@@ -11,7 +11,7 @@ Regex::Regex(string pattern)
 {
 	if (pattern == "")
 		throw exception("Ä£Ê½Îª¿Õ");
-	bool debug = false;
+	bool debug = true;
 	_root = parse();
 	if (debug) _root->rowOrderPrint(); 
 	graph = buildGraph(_root); 
@@ -183,6 +183,17 @@ GraphPtr Regex::buildGraph(NodePtr root)
 			GraphPtr lgraph = buildGraph(root->getLchild());
 			return GraphManager::repeatLink(lgraph);
 		}
+		else if (symbol == '+')
+		{
+			GraphPtr lgraph = buildGraph(root->getLchild());
+			GraphPtr repeat = GraphManager::repeatLink(lgraph);
+			return GraphManager::chuanLink(lgraph, repeat);
+		}
+		else if (symbol == '?')
+		{
+			GraphPtr lgraph = buildGraph(root->getLchild());
+			return GraphManager::chooseLink(lgraph);
+		}
 		else
 		{
 			throw exception("Unrecognized symbol");
@@ -199,3 +210,27 @@ Type Regex::nextToken()
 {
 	return pattern[++index];
 }
+
+// A = A '|' B
+// A = B
+
+// B = BC
+// B = C
+
+// C = C '+'
+// C = C '*'
+// C = C '?'
+// C = '(' A ')'
+// C = D
+
+// D = char
+// D = '\' char
+// D = '[' E ']'
+// D = "[^" E ']'
+
+// E = EF
+// E = F
+
+// F = char '-' char
+// F = char
+// F = '\' char
