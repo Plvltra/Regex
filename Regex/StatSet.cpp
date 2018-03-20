@@ -71,3 +71,8 @@ void StatSet::printSet()
 		cout << elem->ID << " ";
 	cout << ")";
 }
+
+bool StatSet::operator< (const StatSet& other) const
+{
+	return elems < other.elems;
+}

@@ -80,12 +80,17 @@ void BaseGraph::printGraph()
 			// 添加边内容
 			Edges outEdges = front->getOutEdges();
 			for (auto edge : outEdges)
+			{
 				typeQue.push(edge->getContent());
+				cout << "  " << edge->getContent() << "->";
+				auto next = edge->getTo();
+				cout << next->ID << boolalpha << next->getEnd() << "  ";
+			}
 			// 添加下一节点
 			Stats nextStats = front->nextStats();
 			for (auto stat : nextStats)
 			{
-				bool repeatPrint = 0;
+				bool repeatPrint = true;
 				if (!repeatPrint)
 				{
 					if (!stat->checked)
@@ -102,11 +107,11 @@ void BaseGraph::printGraph()
 		}
 		cout << endl;
 
-		while (!typeQue.empty())
+		/*while (!typeQue.empty())
 		{
 			cout << typeQue.front() << " ";
 			typeQue.pop();
-		}
+		}*/
 		cout << endl;
 	}
 	cout << "--------------------" << endl;

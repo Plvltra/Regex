@@ -23,6 +23,7 @@ public:
 	int size();
 	bool empty();
 	void printSet();
+	bool operator< (const StatSet& other) const;
 	// Attributes
 	bool isEnd;
 

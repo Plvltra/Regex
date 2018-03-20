@@ -13,22 +13,24 @@
 #include "LinkManager.h"
 #include "GraphManager.h"
 #include "Graph.h"
+#include "DFAMatrix.h"
 
 using namespace std;
 
 int main()
-{
+{	
 	try
 	{
 		int mode = 0;
 		if (mode == 0)
 		{
-			Regex re("a");
-			re.match("dabc");
+			//Regex re("8aa(bb|dd)");
+			Regex re("1(1*|2)23");
+			re.match("1223");
 		}
 		else if(mode == 1) 
 		{
-			Regex re("abc|d");
+			Regex re("ab(c)*");
 			/*GraphPtr g = makeGraph('a');
 			GraphPtr g2 = GraphManager::repeatLink(g);
 			g2->printGraph();
@@ -38,6 +40,7 @@ int main()
 			DFAGraphPtr g4 = makeDFAGraph(g3);
 			g4->printGraph();*/
 		}
+
 		cout << "finished" << endl;
 
 		//GraphPtr g1 = makeGraph('a');
@@ -54,8 +57,8 @@ int main()
 		//DFAGraphPtr dg = makeDFAGraph(ng);
 		//dg->printGraph();
 
-		//using Arithmetic::test;
-		//test();
+		/*using Arithmetic::test;
+		test();*/
 
 		//Regex regex("a(bc*|de*)");
 		////Regex regex("a|b|c|d|e|f");
@@ -75,8 +78,8 @@ int main()
 		//for (auto result : results)
 		//	cout << result << endl;
 	}
-	catch (...)
+	catch (const exception& e)
 	{
-		cout << "got exception" << endl;
+		cout << e.what() << endl;
 	}
 }

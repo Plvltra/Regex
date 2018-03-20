@@ -9,14 +9,17 @@ using namespace std;
 Regex::Regex(string pattern)
 	: pattern(pattern), index(0)
 {
+	if (pattern == "")
+		throw exception("模式为空");
+	bool debug = false;
 	_root = parse();
-	_root->rowOrderPrint();
+	if (debug) _root->rowOrderPrint(); 
 	graph = buildGraph(_root); 
-	graph->printGraph();
+	if (debug) graph->printGraph();
 	nfaGraph = makeNFAGraph(graph); 
-	nfaGraph->printGraph();
+	if (debug) nfaGraph->printGraph();
 	dfaGraph = makeDFAGraph(nfaGraph);
-	dfaGraph->printGraph();
+	if (debug) dfaGraph->printGraph();
 }
 
 void Regex::printTree()
@@ -34,79 +37,122 @@ void Regex::match(std::string text)
 NodePtr Regex::parse()
 {
 	index = 0;
-	NodePtr root = parseExpr();
+	NodePtr root = parseA();
 	// return root;
-	if (index != pattern.size()) 
+	if (currToken() != '\0') 
 		throw exception("待匹配串有多余部分");
 	else 
 		return root;
 }
 
-NodePtr Regex::parseExpr()
+// A = A '|' B
+// A = B
+NodePtr Regex::parseA()
 {
-	NodePtr lchild = parseTerm();
+	if (currToken() == '|' || currToken() == '+' || currToken() == '*' 
+		|| currToken() == '?' || currToken() == ')' || currToken() == ']')
+		throw exception("匹配表达式A中符号出现在错误的位置");
+	NodePtr lchild = parseB();
 	NodePtr root = lchild;
-	while (index < pattern.size() && inExprSet(pattern[index]))
+	while (currToken() != '\0' && currToken() == '|')
 	{
-		char token = pattern[index];
-		NodePtr rchild = NULL;
-		if (token == '|' || token == '&')
-		{
-			index++;
-			rchild = parseTerm();
-			root = makeNode(token, lchild, rchild);
-			lchild = root;
-		}
-		else if(isalpha(token) || isdigit(token))
-		{
-			rchild = parseTerm();
-			root = makeNode('&', lchild, rchild);
-			lchild = root;
-		}
-		else if (token == '(')
-		{
-			rchild = parseCharSet();
-			root = makeNode('&', lchild, rchild);
-			lchild = root;
-		}
+		nextToken();
+		if (currToken() == '\0')
+			throw exception("表达式非法结束，| 操作符缺少右操作数");
+		else if (currToken() == '|' || currToken() == '+' || currToken() == '*' 
+			|| currToken() == '?' || currToken() == ')' || currToken() == ']')
+			throw exception("表达式非法结束，| 操作符非法连接右操作数 ");
+		NodePtr rchild = parseB();
+		root = makeNode('|', lchild, rchild);
+		lchild = root;
 	}
 	return root;
 }
 
-NodePtr Regex::parseTerm()
+// B = BC
+// B = C
+NodePtr Regex::parseB()
 {
-	NodePtr charSet = parseCharSet();
-	NodePtr root = charSet;
-	while (index < pattern.size() && inTermSet(pattern[index]))
+	NodePtr lchild = parseC();
+	NodePtr root = lchild;
+	while (currToken() != '\0' && currToken() != '|'
+		&& currToken() != '+' && currToken() != '*' 
+		&& currToken() != '?' && currToken() != ')' && currToken() != ']')
 	{
-		char token = pattern[index];
-		if (token == '*')
-		{
-			index++;
-			root = makeNode('*', charSet);
-		}
+		NodePtr rchild = parseC();
+		root = makeNode('&', lchild, rchild);
+		lchild = root;
 	}
 	return root;
 }
 
-NodePtr Regex::parseCharSet()
+// C = C '+'
+// C = C '*'
+// C = C '?'
+// C = '(' A ')'
+// C = D
+NodePtr Regex::parseC()
 {
-	char token = pattern[index];
-	NodePtr charSet = NULL;
-	if (token == '(')
+	NodePtr root = NULL;
+	if (currToken() == '(') //匹配 '(' A ')'
 	{
-		index++;
-		charSet = parseExpr();
-		char expected = pattern[index++];
+		nextToken();
+		NodePtr child = parseA();
+		root = child;
+		char expected = currToken();
+		nextToken();
 		if (expected != ')')
 			throw exception("括号不匹配");
+		// C = '(' A ')', 额外匹配 C '*'之类
+		while (currToken() != '\0'
+			&& (currToken() == '+' || currToken() == '*' || currToken() == '?'))
+		{
+			root = makeNode(currToken(), child);
+			child = root;
+			nextToken();
+		}
 	}
 	else
 	{
-		index++;
-		charSet = makeNode(token);
-	}
-	return charSet;
+		NodePtr child = parseD(); //匹配  D
+		root = child;
+		// TODO: debug
+		// 额外匹配  D '*', ( D '+') '*'
+		while (currToken() != '\0' 
+			&& (currToken() == '+' || currToken() == '*' || currToken() == '?'))
+		{
+			root = makeNode(currToken(), child);
+			child = root;
+			nextToken();
+		}
+	}	
+	return root;
+}
+
+// D = char
+// D = '\' char
+// D = '[' E ']'
+// D = "[^" E ']'
+NodePtr Regex::parseD()
+{
+	return parseE();
+}
+
+// E = EF
+// E = F
+NodePtr Regex::parseE()
+{
+	return parseF();
+}
+
+// F = char '-' char
+// F = char
+// F = '\' char
+NodePtr Regex::parseF()
+{
+	// TODO: implements
+	char token = pattern[index++];
+	return makeNode(token);
 }
 
 GraphPtr Regex::buildGraph(NodePtr root)
@@ -144,45 +190,12 @@ GraphPtr Regex::buildGraph(NodePtr root)
 	}
 }
 
-// a|b, a&b, (...)
-inline bool Regex::inExprSet(char c)
+Type Regex::currToken()
 {
-	return c == '|' || c == '&' || c == '(' || inCharSet(c);
+	return pattern[index];
 }
 
-// a*
-inline bool Regex::inTermSet(char c)
+Type Regex::nextToken()
 {
-	return c == '*';
+	return pattern[++index];
 }
-
-// a-z A-z 0-9
-inline bool Regex::inCharSet(char c)
-{
-	return isalpha(c) || isdigit(c);
-}
-
-
-// A = A '|' B
-// A = B
-
-// B = BC
-// B = C
-
-// C = C '+'
-// C = C '*'
-// C = C '?'
-// C = '(' A ')'
-// C = D
-
-// D = char
-// D = '\' char
-// D = '[' E ']'
-// D = "[^" E ']'
-
-// E = EF
-// E = F
-
-// F = char '-' char
-// F = char
-// F = '\' char

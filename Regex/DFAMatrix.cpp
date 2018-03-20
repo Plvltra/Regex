@@ -34,6 +34,12 @@ StatSetPtr& Row::operator[] (int i)
 }
 
 
+// StatSetPtrCmp
+bool StatSetPtrCmp::operator()(const StatSetPtr ptr1, const StatSetPtr ptr2) const
+{
+	return *ptr1 < *ptr2;
+}
+
 // DFAMatrix 
 DFAMatrix::DFAMatrix(NFAGraphPtr NFAGraph)
 {
@@ -46,8 +52,6 @@ DFAMatrix::DFAMatrix(NFAGraphPtr NFAGraph)
 
 StatPtr DFAMatrix::buildDFAGraph()
 {
-	matrix;
-	StatPtr start1 = toStat(matrix[0][0]);
 	for (int i = 0; i < MAX_ROW; i++)
 	{
 		StatPtr firstElem = toStat(matrix[i][0]);
@@ -77,7 +81,7 @@ void DFAMatrix::extend(StatPtr start)
 
 inline int DFAMatrix::toID(StatSetPtr set)
 {
-	if (set == NULL)
+	if (set == NULL || IDMap[set] == 0)
 		return 0;
 	return IDMap[set];
 }
@@ -86,8 +90,6 @@ StatPtr DFAMatrix::toStat(StatSetPtr set)
 {
 	if (set == NULL)
 		return NULL;
-	if (!statMap.count(set))
-		statMap[set] = makeStat(set->isEnd, toID(set));
 	return statMap[set];
 }
 
@@ -102,21 +104,9 @@ void DFAMatrix::rowExtend(int rowIndex)
 		// 若存在进行新的行插入
 		if (extend)
 		{
-			// 检测是否存在extend
-			bool exist = false;
-			for (auto pair : IDMap)
-			{
-				StatSetPtr key = pair.first;
-				if (*key == *extend)
-				{
-					exist = true;
-					break;
-				}
-			}
-			if(!exist)
+			if(!statMap.count(extend))
 				insertRow(extend);
 		}
-			
 	}
 }
 
@@ -126,6 +116,7 @@ void DFAMatrix::insertRow(StatSetPtr rowFirst)
 		throw exception("rowFirst is NULL");
 	MAX_ROW++;
 	IDMap[rowFirst] = MAX_ROW;
+	statMap[rowFirst] = makeStat(rowFirst->isEnd, MAX_ROW);
 	matrix.push_back(Row(rowFirst));
 }
 
