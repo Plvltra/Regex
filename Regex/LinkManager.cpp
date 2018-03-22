@@ -20,8 +20,8 @@ void LinkManager::cross(StatPtr from, StatPtr beCrossed)
 		return;
 	debug("Cross Link from: " + to_string(from->ID) + " beCrossed: " + to_string(beCrossed->ID));
 	level++;
-	Stats& tos = beCrossed->nextStats();
-	Conts& contents = beCrossed->nextContents();
+	Stats tos = beCrossed->nextStats();
+	Conts contents = beCrossed->nextContents();
 	int size = tos.size();
 	for (int i = 0; i < size; i++)
 		link(from, tos[i], contents[i]);
@@ -41,6 +41,19 @@ void LinkManager::skipStat(StatPtr from, StatPtr beSkiped)
 	level--;
 }
 
+void LinkManager::skipStat(StatPtr from, StatPtr beSkiped, Type content)
+{
+	if (!from || !beSkiped)
+		return;
+	debug("Skip Stat from: " + to_string(from->ID) + " beSkiped: " + to_string(beSkiped->ID));
+	level++;
+	cross(from, beSkiped);
+	deleteLink(from, beSkiped, content);
+	if (beSkiped->getEnd())
+		from->setEnd(true);
+	level--;
+}
+
 void LinkManager::eraseStat(StatPtr stat)
 {
 	if (!stat)
@@ -49,9 +62,7 @@ void LinkManager::eraseStat(StatPtr stat)
 	level++;
 	// 转换前一节点与此节点的连接
 	for (auto preStat : stat->preStats())
-	{
 		skipStat(preStat, stat);
-	}
 	deleteLinks(stat, stat->nextStats()); // 删去出的边
 	level--;
 }
@@ -63,40 +74,63 @@ bool LinkManager::isLinked(StatPtr from, StatPtr to)
 	return from->previous(to) || from->next(to);
 }
 
-EdgePtr LinkManager::getLink(StatPtr from, StatPtr to)
+Edges LinkManager::getLink(StatPtr from, StatPtr to)
 {
 	if (!from->previous(to))
-		return NULL;
+		return Edges();
 
 	Edges outEdges = from->getOutEdges();
+	Edges result;
 	for (auto edge : outEdges)
 	{
 		if (edge->getTo() == to)
-			return edge;
+			result.push_back(edge);
+	}
+	return result;
+}
+
+Conts LinkManager::getLinkCont(StatPtr from, StatPtr to)
+{
+	auto edges = getLink(from, to);
+	Conts conts;
+	for (auto edge : edges)
+		conts.push_back(edge->getContent());
+	return conts;
+}
+
+void LinkManager::deleteLink(StatPtr from, StatPtr to)
+{
+	// 保持顺序
+	Edges edges = getLink(from, to);
+	debug("Delete Link from: " + to_string(from->ID) + " to: " + to_string(to->ID));
+
+	// 从容器中删除
+	Edges& outEdges = from->getOutEdges();
+	Edges& inEdges = to->getInEdges();
+	for (auto edge : edges)
+	{
+		deleteElem(outEdges, edge);
+		deleteElem(inEdges, edge);
 	}
 }
 
-Type LinkManager::getLinkCont(StatPtr from, StatPtr to)
-{
-	auto edge = getLink(from, to);
-	return edge->getContent();
-}
-
-void LinkManager::deleteLink(StatPtr stat1, StatPtr stat2)
+void LinkManager::deleteLink(StatPtr from, StatPtr to, Type content)
 {
 	// 保持顺序
-	EdgePtr edge = getLink(stat1, stat2);
-	if (!edge)
-		return;
-	else if (edge->getFrom() != stat1)
-		deleteLink(stat2, stat1);
-	debug("Delete Link from: " + to_string(stat1->ID) + " to: " + to_string(stat2->ID));
+	Edges edges = getLink(from, to);
+	debug("Delete Link from: " + to_string(from->ID) + " to: " + to_string(to->ID));
 
 	// 从容器中删除
-	Edges& outEdges = stat1->getOutEdges();
-	Edges& inEdges = stat2->getInEdges();
-	deleteElem(outEdges, edge);
-	deleteElem(inEdges, edge);
+	Edges& outEdges = from->getOutEdges();
+	Edges& inEdges = to->getInEdges();
+	for (auto edge : edges)
+	{
+		if (edge->getContent() == content)
+		{
+			deleteElem(outEdges, edge);
+			deleteElem(inEdges, edge);
+		}
+	}
 }
 
 void LinkManager::deleteLinks(StatPtr stat, Stats& stats)

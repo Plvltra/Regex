@@ -25,8 +25,8 @@ int main()
 		if (mode == 0)
 		{
 			//Regex re("8aa(bb|dd)");
-			Regex re("a?");
-			re.match("baa");
+			Regex re("b(c?|a)");
+			re.match("dsf");
 		}
 		else if(mode == 1) 
 		{

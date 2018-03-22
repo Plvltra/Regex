@@ -20,8 +20,8 @@ void NFAGraph::buildNFAGraph()
 	auto deleteEpsEdge = [](StatPtr stat) {
 		for (auto next : stat->nextStats())
 		{
-			if (LinkManager::getLinkCont(stat, next) == epsilon)
-				LinkManager::skipStat(stat, next);
+			// TODO£∫º”≈–∂œ
+			LinkManager::skipStat(stat, next, epsilon);
 		}
 	};
 	bfs(deleteEpsEdge);
